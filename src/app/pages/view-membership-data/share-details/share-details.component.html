@@ -1,0 +1,124 @@
+
+<form [formGroup]="shareDetail" (ngSubmit)="onSubmit()">
+
+  <nb-card size="medium" accent="warning">
+      
+    <nb-card-header>Share Detail</nb-card-header>
+    
+      <nb-card-body>
+          <div class="row">
+            <div class="col-md-4">
+              <label>Status</label>
+              <nb-select fullWidth status="primary" size="small" placeholder="Active"formControlName="status">
+                <nb-option value="Active">Active</nb-option>
+                <nb-option value="Adjusted in Thrift">Closed</nb-option>
+              </nb-select>  
+            </div>
+
+            <div class="col-md-4">
+              <label>Certificate Number</label>
+              <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="certificateNumber">
+            </div>
+                
+             <div class="col-md-4">
+               <label>Staff No.</label>
+               <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">
+             </div>    
+  
+        </div>  
+      
+        <div class="row">
+          <div class="col-md-4">
+            <label>No Certificate at Back</label>
+            <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="certificateAtBack">
+          </div> 
+
+          <div class="col-md-4">
+              <label>Member Name</label>
+              <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="memberName">
+            </div> 
+              
+          <div class="col-md-4">
+            <label>Date Of Allocation</label>
+            <input nbInput fullWidth fieldSize="small" [nbDatepicker]="allocationDate" shape="rectangle" status="primary" formControlName="allocationDate">
+            <nb-datepicker #allocationDate></nb-datepicker>
+          </div>   
+        </div> 
+        
+        <div class="row">
+
+            <div class="col-md-4">
+                <label>Share Allocation From </label>
+                <nb-select fullWidth status="primary" size="small" placeholder="Loan" formControlName="shareAllocationForm">
+                  <nb-option value="Adjustment">Adjustment</nb-option>
+                  <nb-option value="Loan">Loan</nb-option>
+                  <nb-option value="New Member">New Member</nb-option>
+                  <nb-option value="Thrift">Thrift</nb-option>
+                </nb-select>  
+              </div>  
+            <div class="col-md-4">
+              <label>Share Amount (In Rs.)</label>
+              <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="shareAmt">
+            </div>
+                
+            <div class="col-md-4">
+              <label>No. Of Share Allocated</label>
+              <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="shareAllocatedNo">
+            </div>
+        </div>
+        
+        <div class="row">
+
+            <div class="col-md-4" style="margin-top: 25px;">
+                <nb-checkbox status="warning" formControlName="certificatePrinted">Certificate Printed</nb-checkbox>
+              </div>
+  
+            <div class="col-md-4">
+                <button style="margin-top: 25px;" nbButton hero fullWidth status="warning">Click To Save</button>
+             </div>
+        </div>   
+    </nb-card-body> 
+  </nb-card>  
+  
+  <nb-card size="medium" accent="danger">
+      
+      <nb-card-header>Payment Details</nb-card-header>
+      
+        <nb-card-body>
+            <div class="row">
+  
+              <div class="col-md-4">
+                <label>Payment Type</label>
+                <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="paymentType">
+              </div>
+
+              <div class="col-md-4" style="margin-top: 25px;">
+                <nb-checkbox status="warning" formControlName="approved">Approved</nb-checkbox>
+              </div>
+
+              <div class="col-md-4" style="margin-top: 25px;">
+                <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+              </div>
+          </div>   
+
+            <div class="row">   
+                  
+               <div class="col-md-6">
+                 <label>Amount In Word</label>
+                 <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="AmtInWord"></textarea>
+               </div> 
+               
+               <div class="col-md-4">
+                  <button style="margin-top: 25px;" nbButton hero fullWidth status="success">Submit</button>
+               </div>
+
+               <div class="col-md-12" style="margin-top: 25px;">
+                  <p>
+                      value: {{ shareDetail.value | json}}
+                  </p>
+              </div>
+            </div>   
+      </nb-card-body> 
+    </nb-card>
+  </form>
+      

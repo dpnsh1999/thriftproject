@@ -1,0 +1,47 @@
+
+<form [formGroup]= "guarantorRecovery" (ngSubmit)= "onSubmit()">
+
+    <nb-card size="small" accent="warning">
+        <nb-card-header>Guarantor Recovery</nb-card-header>
+        <nb-card-body>
+      
+          <div class="row">
+      
+              <div class="col-md-6">
+                <label>Name</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="name">  
+              </div>
+              
+              <div class="col-md-6">
+                  <label>Amount</label>
+                  <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="amount">  
+                </div> 
+          </div>
+
+          <div class="row">
+      
+              <div class="col-md-6">
+                <label>EMI</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="emi">  
+              </div>
+              
+              <div class="col-md-6">
+                  <label>Details</label>
+                  <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="details"></textarea>  
+              </div> 
+          </div>
+          <div class="row">
+      
+              <div class="col-md-12" style="margin-top: 25px;">
+                <p>
+                    value: {{ guarantorRecovery.value | json }}
+                </p>
+              </div>
+
+          </div>
+      </nb-card-body>
+    </nb-card> 
+</form>     
+    
+      
+                  

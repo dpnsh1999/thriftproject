@@ -1,0 +1,96 @@
+
+<form [formGroup]="loanRequestForms" (ngSubmit)= "onSubmit()">
+
+
+<nb-card size="giant" accent="success">
+  <nb-card-header>Forms Details</nb-card-header>
+
+  <nb-card-body>
+
+    <div class="row">
+        <div class="col-md-6">
+          <label>Form No.</label>
+          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="formNumber">
+        </div>
+
+        <div class="col-md-6">
+            <label>Status</label>
+            <nb-select fullWidth status="primary" placeholder="Active" size="small" formControlName="status">
+              <nb-option value="true">Active</nb-option>
+              <nb-option value="false">Closed</nb-option>
+            </nb-select>  
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+          <label>Staff Number</label>
+          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">
+        </div>
+
+        <div class="col-md-4">
+            <label>Member Name</label>
+            <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="memberName">
+        </div>
+
+        <div class="col-md-4">
+            <label>Type Of Loan</label>
+            <nb-select fullWidth status="primary" placeholder="Regular Loan"size="small" formControlName="loanType">
+                <nb-option value="Regular Loan">Regular Loan</nb-option>
+                <nb-option value="Consumer Loan">Consumer Loan </nb-option>
+                <nb-option value="Emergency Loan">Emergency Loan</nb-option>
+            </nb-select>  
+        </div>
+    </div>  
+
+        <div class="row">
+            <div class="col-md-6">
+              <label>Loan Amount</label>
+              <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanAmount">
+            </div>
+    
+            <div class="col-md-6">
+                <label>Apply Date</label>
+                <input nbInput fullWidth fieldSize="small" [nbDatepicker]="applyDate" shape="rectangle" status="primary" formControlName="applyDate">
+                <nb-datepicker #applyDate></nb-datepicker> 
+            </div>
+        </div>    
+
+            <div class="row">
+                <div class="col-md-6">
+                  <label>Staff No. of Surety 1</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="suretyStaffNum1">
+                </div>
+        
+                <div class="col-md-6">
+                    <label>Name of Surety 1</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="suretyName1">
+                </div>
+            </div>    
+
+            <div class="row">
+                <div class="col-md-6">
+                  <label>Staff No. of Surety 2</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="suretyStaffNum2">
+                </div>
+            
+                <div class="col-md-6">
+                  <label>Name of Surety 2</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="suretyName2">
+                </div>
+            </div> 
+
+            <div class="row">
+              <div class="col-md-4">
+                  <button style="margin-top: 25px;" nbButton hero fullWidth status="success">Submit</button>
+              </div>
+
+              <div class="col-md-12" style="margin-top: 25px;">
+                  <p>
+                      value: {{ loanRequestForms.value | json}}
+                  </p>
+              </div>
+            </div> 
+  </nb-card-body>
+ </nb-card>
+</form> 

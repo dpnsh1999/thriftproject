@@ -1,0 +1,105 @@
+
+<form [formGroup]="allChequeList" (ngSubmit)= "onSubmit()">
+
+<nb-card size="large" accent="danger">
+  <nb-card-header>All Cheque List</nb-card-header>
+  <nb-card-body>
+
+    <div class="row">
+        
+        <div class="col-md-4">
+            <label>Status</label>
+            <nb-select fullWidth size="small" placeholder="Active" status="primary" formControlName="status">
+              <nb-option value="true" >Active</nb-option>
+              <nb-option value="false" >Canceled</nb-option>
+             </nb-select>
+        </div>
+
+        <div class="col-md-4">
+            <label>Cheque Date</label>
+            <input nbInput fullWidth fieldSize="small" placeholder="" [nbDatepicker]="chequeDate" shape="rectangle" status="primary" formControlName="chequeDate">
+            <nb-datepicker #chequeDate></nb-datepicker>
+        </div>
+
+        <div class="col-md-4">
+          <label>Pay to</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="payTo">
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <label>Transaction From</label>
+            <nb-select fullWidth size="small" placeholder="Loan" status="primary" formControlName="transactionForm">
+              <nb-option value="Loan" >Loan</nb-option>
+              <nb-option value="FD" >FD</nb-option>
+              <nb-option value="Old FD Cheque" >Old FD Cheque</nb-option>
+              <nb-option value="Excess Payment" >Excess Payment</nb-option>
+             </nb-select>
+        </div>
+
+        <div class="col-md-4">
+            <label>Cheque Type</label>
+            <nb-select fullWidth size="small" placeholder="Payment" status="primary" formControlName="chequeType">
+              <nb-option value="Payment" >Payment</nb-option>
+              <nb-option value="Receive" >Receive</nb-option>
+             </nb-select> 
+        </div>
+
+        <div class="col-md-4">
+           <label>Cheque Number/ Bank Code</label>
+           <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="chequeNum">
+        </div>
+    </div>
+    
+    <div class="row">
+
+        <div class="col-md-4">
+            <label>Bank Name</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="bankName">
+        </div>
+
+        <div class="col-md-4">
+            <label>Receive Amount</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="receiveAmt">
+        </div> 
+
+        <div class="col-md-4">
+          <label>Pay Amount</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="payAmount">
+      </div> 
+    </div>   
+   
+    <div class="row">
+
+        <div class="col-md-4" style="margin-top: 25px;">
+            <nb-checkbox status="success" formControlName="cleared">Cleared </nb-checkbox>
+        </div>
+
+        <div class="col-md-4">
+          <label>Clearance Date</label>
+          <input nbInput fullWidth fieldSize="small" placeholder="" [nbDatepicker]="clearanceDate" shape="rectangle" status="primary" formControlName="clearanceDate">
+          <nb-datepicker #clearanceDate></nb-datepicker>
+        </div>
+
+        <div class="col-md-4" style="margin-top: 25px;">
+          <nb-checkbox status="success" formControlName="active">Active </nb-checkbox>
+        </div> 
+    </div>
+    
+    <div class="row">
+
+        <div class="col-md-4">
+            <button style="margin-top: 25px;" nbButton hero fullWidth status="success">Submit</button>
+         </div>
+
+         <div class="col-md-12" style="margin-top: 25px;">
+            <p>
+                value: {{ allChequeList.value | json}}
+            </p>
+        </div>
+    </div> 
+  </nb-card-body>  
+ </nb-card>
+</form>  

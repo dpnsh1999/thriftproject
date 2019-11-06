@@ -1,0 +1,91 @@
+
+<form [formGroup]= "rdApplicationForm" (ngSubmit)= "onSubmit()">
+
+<nb-card size="giant" accent="danger">
+    <nb-card-header>Recurring Deposit Application Form</nb-card-header>
+    <nb-card-body>
+  
+      <div class="row">
+  
+          <div class="col-md-6">
+              <label class="type-label" for="Type of Reg.">Type of Reg.</label>
+              <nb-select fullWidth status="primary" size="small" placeholder="AETISAN" formControlName="typeOfReg">
+                      <nb-option value="AETISAN">AETISAN</nb-option>
+                      <nb-option value="STAFF">STAFF</nb-option>
+              </nb-select>    
+          </div>
+  
+          <div class="col-md-6">
+              <label>Membership status</label>
+              <nb-select fullWidth size="small" status="primary" placeholder="Active"formControlName="membershipStatus">
+                  <nb-option value="true" >Active</nb-option>
+                  <nb-option value="false" >Closed</nb-option>
+              </nb-select>
+          </div>   
+      </div>
+
+      <div class="row">
+  
+          <div class="col-md-6">
+            <label>Membership No.</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="membershipNumber">  
+          </div>
+  
+          <div class="col-md-6">
+            <label>Date of Membership</label>
+            <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="membershipDate" formControlName="membershipDate">
+            <nb-datepicker #membershipDate></nb-datepicker>
+          </div>
+      </div>
+
+        <div class="row">
+  
+            <div class="col-md-6">
+              <label>Staff No.</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffNumber">
+            </div>
+      
+            <div class="col-md-6">
+                <label>Member Name</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="memberName">
+            </div>
+        </div> 
+
+        <div class="row">
+  
+            <div class="col-md-4">
+                <label>Gender</label>
+                <nb-select fullWidth size="small" shape="rectangle" status="primary" formControlName="gender">
+                    <nb-option value="Male">Male</nb-option>
+                    <nb-option value="Female">Female</nb-option>
+                </nb-select>
+            </div>
+      
+            <div class="col-md-4">
+                <label>Date of Birth</label>
+                <input nbInput fullWidth fieldSize="small" placeholder="DOB" [nbDatepicker]="dob" shape="rectangle" status="primary" formControlName="dob">
+                <nb-datepicker #dob></nb-datepicker>
+            </div>
+
+            <div class="col-md-4">
+                    <label>Retirement Date</label>
+                    <input nbInput fullWidth fieldSize="small" placeholder="" [nbDatepicker]="retirementDate" shape="rectangle" status="primary" formControlName="retirementDate">
+                    <nb-datepicker #retirementDate></nb-datepicker>
+            </div>
+        </div> 
+
+        <div class="row">
+  
+            <div class="col-md-4">
+                <button style="margin-top: 25px;" nbButton hero fullWidth status="danger">Submit</button>
+            </div>
+
+            <div class="col-md-12" style="margin-top: 25px;">
+                <p>
+                    value: {{ rdApplicationForm.value | json}}
+                </p>
+            </div>
+            </div> 
+    </nb-card-body>
+ </nb-card>         
+</form> 

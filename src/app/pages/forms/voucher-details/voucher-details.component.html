@@ -1,0 +1,102 @@
+
+<form [formGroup]= "voucherDetails" (ngSubmit)= "onSubmit"> 
+
+<nb-card size="small" accent="primary">
+    <nb-card-header>Basic Details</nb-card-header>
+    <nb-card-body>
+  
+      <div class="row">
+          
+          <div class="col-md-4">
+              <label>Voucher Type</label>
+              <nb-select fullWidth size="small" shape="rectangle" placeholder="Consumer Loan Voucher" status="primary" formControlName="voucherType">
+                  <nb-option value="Consumer Loan Voucher">Consumer Loan Voucher</nb-option>
+              </nb-select>             
+          </div>
+
+          <div class="col-md-4">
+              <label>status</label>
+              <nb-select fullWidth size="small" shape="rectangle" placeholder="Active" status="primary" formControlName="status">
+                  <nb-option value="true">Active</nb-option>
+                  <nb-option value="false">Cancelled</nb-option>
+              </nb-select>        
+           </div>
+
+         <div class="col-md-4">
+           <label>Voucher No.</label>
+           <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="voucherNum">
+         </div>
+      </div>
+
+      <div class="row">
+          
+          <div class="col-md-4">
+              <label>Staff Number</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffNumber">
+          </div>
+
+          <div class="col-md-4">
+              <label>Name</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="name">
+          </div>
+      </div>    
+    </nb-card-body>  
+</nb-card>    
+
+<nb-card size="small" accent="danger">
+    <nb-card-header>Voucher Details</nb-card-header>
+    <nb-card-body>
+      <div class="row">
+  
+          <div class="col-md-4">
+            <label>Voucher / From Date</label>
+            <input nbInput fullWidth fieldSize="small" placeholder="" [nbDatepicker]="voucherFromDate" shape="rectangle" status="primary" formControlName="voucherFromDate">
+            <nb-datepicker #voucherFromDate></nb-datepicker>
+          </div>
+      </div>
+    </nb-card-body>  
+</nb-card>  
+          
+<nb-card size="medium">
+    <nb-card-header>Summary</nb-card-header>
+    <nb-card-body>
+      <div class="row">
+  
+        <div class="col-md-4">
+          <label>Net Payable Ammount</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="payableAmt">
+        </div>
+
+        <div class="col-md-8">
+          <label>Ammount in Words</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="amountInWords">
+        </div>
+      </div>  
+
+      <div class="row">
+  
+        <div class="col-md-4">
+          <button  nbButton fullWidth status="danger" style="margin-top: 25px;">Print Voucher & Lock</button> 
+        </div>
+             
+        <div class="col-md-4" style="margin-top: 25px;">
+          <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+        </div>
+      </div>
+
+      <div class="row">
+          
+          <div class="col-md-4">
+            <button style="margin-top: 25px;" nbButton hero fullWidth status="success">Submit</button>
+          </div>
+  
+          <div class="col-md-12" style="margin-top: 25px;">
+            <p>
+                value: {{ voucherDetails.value | json}}
+            </p>
+          </div>
+        </div>
+    </nb-card-body>  
+  </nb-card>  
+</form>        
+        

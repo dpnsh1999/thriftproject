@@ -1,0 +1,142 @@
+
+<form [formGroup]="fdRequestForm" (ngSubmit)= "onSubmit()">
+
+<nb-card  accent="danger">
+  <nb-card-header>FD Request Form</nb-card-header>
+  <nb-card-body>
+
+    <div class="row"> 
+
+      <div class="col-md-6">
+        <label>Request ID</label>
+        <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="requestId">
+      </div>
+
+      <div class="col-md-6">
+        <label>Request Date</label>
+        <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="requestDate" formControlName="requestDate">
+        <nb-datepicker #requestDate></nb-datepicker>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-6">
+        <label>Staff No.</label>
+        <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffNumber">
+      </div>
+
+      <div class="col-md-6">
+        <label>Member No.</label>
+        <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="memberNumber">
+      </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4">
+          <label>Name</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="name">
+        </div>
+  
+        <div class="col-md-4">
+          <label>Joint Name</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="jointName">
+        </div>
+
+        <div class="col-md-4">
+            <label>Nominee Name</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="nomineeName">
+        </div>
+      </div>
+
+      <div class="row">
+
+          <div class="col-md-3">
+            <label>Mobile No.</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="mobileNumber">
+          </div>
+
+          <div class="col-md-3">
+              <label>PAN No.</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="panNumber">
+          </div>
+    
+          <div class="col-md-6">
+            <label>Address</label>
+            <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="address"></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4">
+              <label>Bank A/C No.</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="bankAccountNumber">
+            </div>
+  
+            <div class="col-md-4">
+                <label>FD Amount</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="fdAmount">
+            </div>
+      
+            <div class="col-md-4">
+              <label>Period</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="period">
+            </div>
+          </div>
+
+          <div class="row">
+
+              <div class="col-md-4">
+                <label>FD Int.</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="fdInterest">
+              </div>
+    
+              <div class="col-md-4">
+                  <label>Maturity Amount</label>
+                  <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="maturityAmount">
+              </div>
+        
+              <div class="col-md-4">
+                <label>Terms</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="terms">
+              </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                  <label>Status</label>
+                  <nb-select fullWidth status="primary" size="small" placeholder="Open" formControlName="status">
+                      <nb-option value="Open">Open</nb-option>
+                      <nb-option value="Closed">Closed</nb-option>
+                      <nb-option value="Cancel">Cancel</nb-option>
+                      <nb-option value="Completed">Completed</nb-option>
+                      <nb-option value="Retiring">Retiring</nb-option>
+                    </nb-select> 
+                </div>
+
+                <div class="col-md-4" style="margin-top: 25px;">
+                    <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+                </div>
+
+                <div class="col-md-4" style="margin-top: 25px;">
+                    <button nbButton hero fullWidth status="danger">Print</button>
+                </div>
+            </div>  
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <button style="margin-top: 25px;" nbButton hero fullWidth status="success">Submit</button>
+                 </div>
+
+                <div class="col-md-12" style="margin-top: 25px;">
+                    <p>
+                        value: {{ fdRequestForm.value | json}}
+                    </p>
+                </div>
+            </div> 
+  </nb-card-body>
+</nb-card>

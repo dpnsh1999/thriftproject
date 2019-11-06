@@ -1,0 +1,122 @@
+
+<form [formGroup]="loanDetails"  (ngSubmit)= "onSubmit()">
+
+<nb-card size="small" accent="primary">
+    <nb-card-header>Loan Details</nb-card-header>
+    <nb-card-body>
+  
+      <div class="row"> 
+  
+        <div class="col-md-4">
+          <label>Status</label>
+          <nb-select fullWidth status="primary" size="small" placeholder="Active" formControlName="status">
+              <nb-option value="true">Active</nb-option>
+              <nb-option value="false">Canceled</nb-option>
+            </nb-select>        
+           </div>
+  
+        <div class="col-md-4">
+          <label>Loan A/C No.</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanAccountNumber">
+        </div>
+  
+         <div class="col-md-4">
+          <label>Type of Loan</label>
+          <nb-select fullWidth status="primary" size="small" placeholder="Regular Loan" formControlName="loanType">
+              <nb-option value="Regular Loan">Regular Loan</nb-option>
+              <nb-option value="Consumer Loan">Consumer Loan</nb-option>
+              <nb-option value="Emergency Loan">Emergency Loan</nb-option>
+          </nb-select> 
+        </div>
+      </div>
+
+      <div class="row">
+  
+        <div class="col-md-4">
+          <label>Staff Number</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffNumber">
+        </div>
+  
+        <div class="col-md-4">
+          <label>Member Name</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="memberName">
+        </div>
+      </div>
+    </nb-card-body>
+</nb-card>  
+
+<nb-card size="small" accent="warning">
+          <nb-card-header>Surety Details</nb-card-header>
+          <nb-card-body>
+            <div class="row">
+  
+              <div class="col-md-4">
+               <label>Req. Amount</label>
+               <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="reqAmount">
+              </div>
+    
+              <div class="col-md-4">
+               <label>Loan Balance</label>
+               <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanBalance">
+              </div>
+           </div>  
+          </nb-card-body>
+</nb-card>          
+
+<nb-card size="small" accent="danger">
+    <nb-card-header>Payment Details</nb-card-header>
+    <nb-card-body>
+  
+        <div class="row">
+  
+            <div class="col-md-3">
+              <nb-checkbox status="success" formControlName="approved">Approved</nb-checkbox>
+            </div>
+        </div>   
+    </nb-card-body>        
+</nb-card>
+
+<nb-card size="medium" accent="info">
+    <nb-card-header>Loan Summary</nb-card-header>
+    <nb-card-body>
+  
+        <div class="row">
+  
+            <div class="col-md-4" style="margin-top: 25px;">
+              <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+            </div>
+
+            <div class="col-md-8">
+              <label>Comments</label>
+              <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="comments"></textarea>
+            </div>
+        </div>   
+
+        <div class="row">
+  
+            <div class="col-md-6">
+              <button style="margin-top: 25px;" nbButton hero fullWidth status="success">Gen Loan A/C No.</button> 
+            </div>
+
+            <div class="col-md-6">
+                <button style="margin-top: 25px;" nbButton hero fullWidth status="danger">Loan Cancellation</button> 
+            </div>
+        </div>
+        
+        <div class="row">
+  
+            <div class="col-md-4">
+                <button style="margin-top: 25px;" nbButton hero fullWidth status="info">Submit</button>
+             </div>
+
+            <div class="col-md-12" style="margin-top: 25px;">
+                <p>
+                    value: {{ loanDetails.value | json}}
+                </p>
+            </div>
+        </div> 
+    </nb-card-body>        
+ </nb-card>
+</form> 
+          
+  

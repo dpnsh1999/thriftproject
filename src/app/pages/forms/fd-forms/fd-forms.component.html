@@ -1,0 +1,108 @@
+
+<form [formGroup]="fdApplicationForm" (ngSubmit)="onSubmit">
+
+<nb-card size="giant" accent="danger">
+    
+    <nb-card-header>FD Application Form</nb-card-header>
+    
+      <nb-card-body>
+          <div class="row">
+             <div class="col-md-6">
+               <label>Membership No.</label>
+               <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="membershipNumber">
+             </div>
+                
+             <div class="col-md-6">
+               <label>Staff No.</label>
+               <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">
+             </div>    
+  
+          </div>  
+      
+        <div class="row">
+               
+            <div class="col-md-4">
+                <label>Membership status</label>
+                <nb-select fullWidth size="small" status="primary" formControlName="membershipStatus">
+                    <nb-option value="true" >Active</nb-option>
+                    <nb-option value="false" >Closed</nb-option>
+                </nb-select>    
+            </div>
+                    
+            <div class="col-md-4">
+                <label>Type of Reg.</label>
+                <nb-select fullWidth status="primary" size="small" formControlName="typeOfReg">
+                        <nb-option value="AETISAN">AETISAN</nb-option>
+                        <nb-option value="STAFF">STAFF</nb-option>
+                </nb-select>    
+            </div> 
+
+            <div class="col-md-4">
+                <label>Reg. No.</label>
+                <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="regNumber">
+            </div> 
+        </div> 
+        
+        <div class="row">
+            <div class="col-md-4">
+                <label>First Name</label>
+                <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="firstName">  
+            </div>
+        
+            <div class="col-md-4">
+                <label>Middle Name</label>
+                <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="middleName">
+            </div>    
+
+            <div class="col-md-4">
+                <label>Last Name</label>
+                <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="lastName">
+            </div>  
+        </div>   
+
+        <div class="row">
+            <div class="col-md-4">
+                <label>Gender</label>
+                <nb-select fullWidth size="small" shape="rectangle" status="primary" formControlName="gender">
+                    <nb-option value="Male">Male</nb-option>
+                    <nb-option value="Female">Female</nb-option>
+                </nb-select>           
+            </div>
+                
+            <div class="col-md-4">
+                <label>Date of Birth</label>
+                    <input nbInput fullWidth fieldSize="small" placeholder="DOB" [nbDatepicker]="dob" shape="rectangle" status="primary" formControlName="dob">
+                    <nb-datepicker #dob></nb-datepicker>
+            </div>
+            
+              <div class="col-md-4">
+                <label>Phone No.</label>
+                <input type="text"nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="phoneNumber">
+            </div>
+        </div>
+        
+        <div class="row">
+         
+            <div class="col-md-12">
+            <label>Current Address</label>
+            <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="currentAdd"></textarea>     
+          </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4">
+               <button style="margin-top: 25px;" nbButton hero fullWidth status="danger">Submit</button>
+            </div>
+      
+            <div class="col-md-12" style="margin-top: 25px;">
+                <p>
+                    value: {{ fdApplicationForm.value | json}}
+                </p>
+            </div>
+        </div>
+    </nb-card-body> 
+  </nb-card>   
+</form>  
+      
+

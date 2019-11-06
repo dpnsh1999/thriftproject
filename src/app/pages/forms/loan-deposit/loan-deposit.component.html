@@ -1,0 +1,152 @@
+
+<form [formGroup]="loanDeposit" (ngSubmit)= "onSubmit()">
+
+<nb-card size="small" accent="warning">
+    <nb-card-header>Loan Deposit</nb-card-header>
+    <nb-card-body>
+  
+      <div class="row">
+  
+         <div class="col-md-6">
+           <label>Staff No.</label>
+           <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffNo">
+         </div>
+  
+         <div class="col-md-6">
+           <label>Deposit Date</label>
+           <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="depositDate" formControlName="depositDate">
+           <nb-datepicker #depositDate></nb-datepicker>
+         </div>
+      </div>
+
+      <div class="row">
+  
+          <div class="col-md-4">
+            <label>Member Name</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="memberName">  
+          </div>
+  
+          <div class="col-md-4">
+            <label>Date of Membership</label>
+            <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="membershipDate" formControlName="membershipDate">
+            <nb-datepicker #membershipDate></nb-datepicker>
+          </div>
+
+          <div class="col-md-4">
+              <label>RT Date</label>
+              <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="rtDate" formControlName="rtDate">
+              <nb-datepicker #rtDate></nb-datepicker>
+            </div>
+      </div>
+
+        <div class="row">
+  
+            <div class="col-md-4">
+              <label>Loan Balance</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanBal">
+            </div>
+      
+            <div class="col-md-4">
+                <label>Remaining Interest</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="rmngInterest">
+            </div>
+
+            <div class="col-md-4">
+                <label>Total</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="total">
+            </div>
+        </div> 
+    </nb-card-body>
+</nb-card>  
+<nb-card size="medium" accent="danger">
+    <nb-card-header>List Of All Loan</nb-card-header>
+    <nb-card-body formGroupName="listOfAllLoan">
+  
+      <div class="row">
+  
+          <div class="col-md-4">
+              <label>Type Of Loan</label>
+              <nb-select fullWidth status="primary" size="small" placeholder="Regular Loan"formControlName="loanType">
+                  <nb-option value="Regular Loan">Regular Loan</nb-option>
+                  <nb-option value="Consumer Loan">Consumer Loan</nb-option>
+                  <nb-option value="Emergency Loan">Emergency Loan</nb-option>
+               </nb-select>  
+          </div>
+  
+         <div class="col-md-4">
+           <label>Apply Date</label>
+           <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="applyDate" formControlName="applyDate">
+           <nb-datepicker #applyDate></nb-datepicker>
+         </div>
+
+         <div class="col-md-4">
+            <label>Loan Amount</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanAmt">  
+        </div>
+      </div>
+
+      <div class="row">
+  
+          <div class="col-md-4">
+            <label>Installment</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="installment">  
+          </div>
+  
+          <div class="col-md-4">
+            <label>Maturity Date</label>
+            <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="maturityDate" formControlName="maturityDate">
+            <nb-datepicker #maturityDate></nb-datepicker>
+          </div>
+
+          <div class="col-md-4">
+              <label>Loan EMI</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanEmi">  
+          </div>
+      </div>
+
+        <div class="row">
+  
+            <div class="col-md-4">
+                <label>Last Deposit Date</label>
+                <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="lastDepositDate" formControlName="lastDepositDate">
+                <nb-datepicker #lastDepositDate></nb-datepicker>
+            </div>
+      
+            <div class="col-md-4">
+                <label>Loan Balance</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanBalance">
+            </div>
+
+            <div class="col-md-4">
+                <label>Remaining interest</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="rmngInterest">
+            </div>
+        </div> 
+
+        <div class="row">
+  
+            <div class="col-md-4">
+                <label>Total Balance </label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="totalBal">
+            </div>
+      
+            <div class="col-md-4">
+                <label>Deposite</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="deposit">
+            </div>
+
+            <div class="col-md-4">
+                <button style="margin-top: 25px;" nbButton hero fullWidth status="info">Submit</button>
+             </div>
+
+             <div class="col-md-12" style="margin-top: 25px;">
+                <p>
+                    value: {{ loanDeposit.value | json}}
+                </p>
+            </div>
+        </div> 
+    </nb-card-body>
+</nb-card>  
+
+
+  

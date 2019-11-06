@@ -1,0 +1,190 @@
+
+<form [formGroup]= "passBookDetails" (ngSubmit)= "onSubmit">
+
+<nb-card size="medium" accent="danger">
+    <nb-card-header>PassBook Details</nb-card-header>
+    <nb-card-body>
+  
+      <div class="row">
+          
+          <div class="col-md-4">
+              <label>Staff No.</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffNumber">
+          </div>
+
+          <div class="col-md-4">
+              <label>Member Name</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="memberName">
+          </div>
+
+         <div class="col-md-4">
+           <label>Registration No.</label>
+           <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="regNumber">
+         </div>
+      </div>
+
+      <div class="row">
+  
+          <div class="col-md-4">
+            <label>Last Printed Date</label>
+            <input nbInput fullWidth fieldSize="small" placeholder="" [nbDatepicker]="lastPrintDate" shape="rectangle" status="primary" formControlName="lastPrintDate">
+            <nb-datepicker #lastPrintDate></nb-datepicker>
+          </div>
+  
+          <div class="col-md-4">
+              <label>Print After Lines</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="printAfterLine">
+            </div>
+      </div>
+
+        <div class="row">
+  
+            <div class="col-md-4" style="margin-top: 24px;">
+                <nb-checkbox status="success" formControlName="passbookIssued">PassBook Issued</nb-checkbox>
+            </div>
+      
+            <div class="col-md-4">
+                <label>Issue Date</label>
+                <input nbInput fullWidth fieldSize="small" placeholder="" [nbDatepicker]="issueDate" shape="rectangle" status="primary" formControlName="issueDate">
+                <nb-datepicker #issueDate></nb-datepicker>
+            </div>
+        </div> 
+
+        <div class="row">
+  
+            <div class="col-md-4">
+                <button  nbButton outline fullWidth status="success" style="margin-top: 25px;">Generate PassBook</button>
+            </div>
+      
+            <div class="col-md-4">
+                <button nbButton fullWidth hero status="warning" style="margin-top: 25px;">Print</button>
+            </div>
+
+            <div class="col-md-4">
+                <button nbButton fullWidth hero status="danger" style="margin-top: 25px;">Print RD</button>  
+            </div>
+        </div>  
+    </nb-card-body>
+</nb-card> 
+
+<nb-card size="large" accent="danger">
+    <nb-card-header>PassBook</nb-card-header>
+    <nb-card-body formGroupName="passBook">
+  
+      <div class="row">
+          
+          <div class="col-md-4">
+              <label>Reg Number</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="registrationNum">
+          </div>
+
+          <div class="col-md-4">
+              <label>Date</label>
+              <input nbInput fullWidth fieldSize="small" placeholder="" [nbDatepicker]="date" shape="rectangle" status="primary" formControlName="date">
+              <nb-datepicker #date></nb-datepicker>
+          </div>
+
+         <div class="col-md-4">
+           <label>Transaction Type</label>
+           <nb-select fullWidth size="small" shape="rectangle" status="primary" formControlName="transactionType">
+              <nb-option value="Payroll">Payroll</nb-option>
+              <nb-option value="Paid by FP">Paid by FP</nb-option>
+              <nb-option value="Thrift Interest">Thrift Interest</nb-option>
+              <nb-option value="MR">MR</nb-option>
+              <nb-option value="Loan Int Adj">Loan Int Adj</nb-option>
+              <nb-option value="LED Bulb">LED Bulb</nb-option>
+              <nb-option value="FAFS/MCGF">FAFS/MCGF</nb-option>
+              <nb-option value="Cheque">Cheque</nb-option>
+              <nb-option value="Bank Transfer">Bank Transfer</nb-option>
+              <nb-option value="Bank Charges">Bank Charges</nb-option>
+              <nb-option value="Adjustment">Adjustment</nb-option>
+            </nb-select>
+         </div>
+      </div>
+
+      <div class="row">
+  
+          <div class="col-md-4">
+            <label>Thrift (Dr)</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="thriftDr">
+          </div>
+  
+          <div class="col-md-4">
+              <label>Thrift (Cr)</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="thriftCr">
+          </div>
+
+        <div class="col-md-4">
+            <label>Balance</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="balance">
+        </div>
+      </div>
+
+        <div class="row">
+  
+            <div class="col-md-4">
+                <label>Transaction Type</label>
+                <nb-select fullWidth size="small" shape="rectangle" status="primary" formControlName="transType">
+                   <nb-option value="Payroll">Payroll</nb-option>
+                   <nb-option value="Paid by FP">Paid by FP</nb-option>
+                   <nb-option value="Thrift Interest">Thrift Interest</nb-option>
+                   <nb-option value="MR">MR</nb-option>
+                   <nb-option value="Loan Int Adj">Loan Int Adj</nb-option>
+                   <nb-option value="LED Bulb">LED Bulb</nb-option>
+                   <nb-option value="FAFS/MCGF">FAFS/MCGF</nb-option>
+                   <nb-option value="Cheque">Cheque</nb-option>
+                   <nb-option value="Bank Transfer">Bank Transfer</nb-option>
+                   <nb-option value="Bank Charges">Bank Charges</nb-option>
+                   <nb-option value="Adjustment">Adjustment</nb-option>
+                 </nb-select>
+              </div>
+      
+            <div class="col-md-4">
+                <label>Loan (Dr)</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanDr">
+            </div>
+
+            <div class="col-md-4">
+                <label>Loan (Cr)</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanCr">
+            </div>
+        </div> 
+
+        <div class="row">
+  
+             <div class="col-md-4">
+                <label>Principle Amount</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="principleAmt">            
+             </div>
+
+             <div class="col-md-4">
+                <label>Interest Amount</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="intAmount">            
+             </div>
+
+             <div class="col-md-4">
+                <label>Remaining Loan</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="rmngLoan">            
+             </div>
+        </div>  
+        
+        <div class="row">
+            <div class="col-md-4">
+                <label>Cheque Number</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="chequeNum">            
+             </div>
+
+             <div class="col-md-4">
+                <button style="margin-top: 25px;" nbButton hero fullWidth status="danger">Submit</button>
+             </div>
+
+             <div class="col-md-12" style="margin-top: 25px;">
+                <p>
+                    value: {{ passBookDetails.value | json}}
+                </p>
+            </div>
+        </div>   
+    </nb-card-body>
+  </nb-card>
+</form>
+        

@@ -1,0 +1,275 @@
+
+<form [formGroup]="loanDetail"  (ngSubmit)= "onSubmit()">
+
+    <nb-card size="small" accent="primary">
+        <nb-card-header>Loan Details</nb-card-header>
+        <nb-card-body>
+      
+          <div class="row"> 
+      
+            <div class="col-md-4">
+              <label>Status</label>
+              <nb-select fullWidth status="primary" size="small" placeholder="Active" formControlName="status">
+                  <nb-option value="true">Active</nb-option>
+                  <nb-option value="false">Canceled</nb-option>
+                </nb-select>        
+               </div>
+      
+            <div class="col-md-4">
+              <label>Loan A/C No.</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanAccountNumber">
+            </div>
+      
+             <div class="col-md-4">
+              <label>Type of Loan</label>
+              <nb-select fullWidth status="primary" size="small" placeholder="Regular Loan" formControlName="loanType">
+                  <nb-option value="Regular Loan">Regular Loan</nb-option>
+                  <nb-option value="Consumer Loan">Consumer Loan</nb-option>
+                  <nb-option value="Emergency Loan">Emergency Loan</nb-option>
+              </nb-select> 
+            </div>
+          </div>
+    
+          <div class="row">
+      
+            <div class="col-md-4">
+              <label>Staff Number</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffNumber">
+            </div>
+      
+            <div class="col-md-4">
+              <label>Member Name</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="memberName">
+            </div>
+          </div>
+        </nb-card-body>
+    </nb-card>  
+
+    <nb-card size="medium" accent="info">
+        <nb-card-header>Loan Details</nb-card-header>
+        <nb-card-body>
+          <div class="row">
+
+            <div class="col-md-4">
+             <label>Loan Requested</label>
+             <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanRequested">
+            </div>
+  
+            <div class="col-md-4">
+             <label>Loan Amount</label>
+             <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanAmt">
+            </div>
+
+            <div class="col-md-4">
+                <label>Loan Balance</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanBalance">
+               </div>
+         </div>
+         
+         <div class="row">
+
+            <div class="col-md-4">
+             <label>Int Rate %</label>
+             <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="IntRate">
+            </div>
+  
+            <div class="col-md-4">
+             <label>Installment</label>
+             <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="installment">
+            </div>
+
+            <div class="col-md-4">
+                <label>Periods In Months</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="periodInMonths">
+               </div>
+         </div> 
+         
+         <div class="row">
+
+            <div class="col-md-6">
+                <label>Apply Date</label>
+                <input nbInput fullWidth fieldSize="small" [nbDatepicker]="applyDate" shape="rectangle" status="primary" formControlName="applyDate">
+               <nb-datepicker #applyDate></nb-datepicker>
+            </div>
+  
+            <div class="col-md-6">
+                <label>Loan End Date</label>
+                <input nbInput fullWidth fieldSize="small" [nbDatepicker]="loanEndDate" shape="rectangle" status="primary" formControlName="loanEndDate">
+                <nb-datepicker #loanEndDate></nb-datepicker>
+            </div>
+        </div> 
+        
+        <div class="row">
+
+            <div class="col-md-4">
+             <label>EMI (Rs)</label>
+             <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="EMI">
+            </div>
+  
+            <div class="col-md-4">
+             <label>Share Needed</label>
+             <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="shareNeeded">
+            </div>
+
+            <div class="col-md-4">
+                <label>Share Value</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="shareValue">
+               </div>
+         </div> 
+    </nb-card-body>
+</nb-card> 
+    
+    <nb-card size="small" accent="warning">
+              <nb-card-header>Surety Details</nb-card-header>
+              <nb-card-body>
+                <div class="row">
+      
+                  <div class="col-md-6">
+                   <label>Staff no 1 </label>
+                   <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffOne">
+                  </div>
+        
+                  <div class="col-md-6">
+                   <label>Name 1</label>
+                   <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="nameOne">
+                  </div>
+               </div>
+               
+               <div class="row">
+      
+                  <div class="col-md-6">
+                   <label>Staff no 2</label>
+                   <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffTwo">
+                  </div>
+        
+                  <div class="col-md-6">
+                   <label>Name 2</label>
+                   <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="nameTwo">
+                  </div>
+               </div>    
+        </nb-card-body>
+    </nb-card>          
+    
+    <nb-card size="large" accent="danger">
+        <nb-card-header>Payment Details</nb-card-header>
+        <nb-card-body>
+      
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label>LSF Upto</label>
+                    <input nbInput fullWidth fieldSize="small" [nbDatepicker]="lsfUpto" shape="rectangle" status="primary" formControlName="lsfUpto">
+                    <nb-datepicker #lsfUpto></nb-datepicker>
+                </div>
+
+                <div class="col-md-6">
+                    <label>LSF Amount</label>
+                    <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="lsfAmt">
+                   </div>
+            </div>
+            
+            <div class="row">
+
+                <div class="col-md-4">
+                 <label>Cheque Number</label>
+                 <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="chequeNum">
+                </div>
+      
+                <div class="col-md-4">
+                 <label>Bank Name</label>
+                 <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="bankName">
+                </div>
+    
+                <div class="col-md-4">
+                  <label>Branch Name</label>
+                  <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="branchName">
+                </div>
+            </div>
+            
+            <div class="row">
+
+              <div class="col-md-4">
+                <label>Cheque Amount</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="chequeAmt">
+              </div>
+
+              <div class="col-md-8">
+                <label>Amount In Words</label>
+                <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="amtInWords"></textarea>
+              </div>
+            </div>
+            
+            <div class="row">
+
+              <div class="col-md-4" style="margin-top: 25px;">
+                  <nb-checkbox status="danger" formControlName="approved">Approved</nb-checkbox>
+              </div>
+    
+              <div class="col-md-4">
+                <button style="margin-top: 25px;" nbButton hero fullWidth status="danger">Print Cheque</button>
+              </div>
+  
+              <div class="col-md-4">
+                <button style="margin-top: 25px;" nbButton hero fullWidth status="danger">Loan Cancellation</button>
+              </div>
+            </div> 
+           
+            <div class="row">
+
+                <div class="col-md-6">
+                  <label>Total loan paid amount</label>
+                  <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="totalLoanPaidAmt">
+                </div>
+
+                <div class="col-md-6">
+                  <label>Total Remaining Balance</label>
+                  <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="totalRmngBal">
+                </div>
+            </div>
+            
+            <div class="row">
+
+              <div class="col-md-6">
+                  <button style="margin-top: 25px;" nbButton hero fullWidth status="danger">Generate Amount To Settle Now</button> 
+              </div>
+            </div>   
+        </nb-card-body>        
+    </nb-card>
+    
+    <nb-card size="medium" accent="info">
+        <nb-card-header>Loan Summary</nb-card-header>
+        <nb-card-body>
+      
+            <div class="row">
+      
+                <div class="col-md-4">
+                  <button style="margin-top: 25px;" nbButton hero fullWidth status="info">Gen Loan A/C No.</button> 
+                </div>
+    
+                <div class="col-md-8">
+                  <label>Comments</label>
+                  <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="comments"></textarea>
+                </div>
+            </div>   
+            
+            <div class="row">
+
+                <div class="col-md-4" style="margin-top: 25px;">
+                    <nb-checkbox status="info" formControlName="active">Active</nb-checkbox>
+                </div>
+      
+                <div class="col-md-4">
+                    <button style="margin-top: 25px;" nbButton hero fullWidth status="info">Submit</button>
+                 </div>
+    
+                <div class="col-md-12" style="margin-top: 25px;">
+                    <p>
+                        value: {{ loanDetail.value | json}}
+                    </p>
+                </div>
+            </div> 
+        </nb-card-body>        
+     </nb-card>
+    </form> 
+              
+      

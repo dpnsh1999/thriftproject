@@ -1,0 +1,76 @@
+
+<form [formGroup]="lsfDetails" (ngSubmit)= "onSubmit()">
+
+<nb-card size="medium" accent="danger">
+    
+    <nb-card-header>LSF Details</nb-card-header>
+    
+      <nb-card-body>
+          <div class="row">
+             <div class="col-md-6">
+               <label>Status</label>
+               <nb-select fullWidth status="primary" placeholder="Active" size="small" formControlName="status">
+                <nb-option value="true">Active</nb-option>
+                <nb-option value="false">Closed</nb-option>
+            </nb-select> 
+         </div>
+                
+             <div class="col-md-6">
+               <label>Loan A/C No.</label>
+               <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanAccountNo">
+             </div>    
+  
+          </div>  
+
+          <div class="row">
+              <div class="col-md-6">
+                <label>From Date</label>
+                <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary"placeholder="Pick Date" [nbDatepicker]="fromDate" formControlName="fromDate">
+                <nb-datepicker #fromDate></nb-datepicker>
+
+                
+              </div>
+                 
+              <div class="col-md-6">
+                <label>To Date</label>
+                <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary"placeholder="Form Picker" [nbDatepicker]="toDate" formControlName="toDate">
+                <nb-datepicker #toDate></nb-datepicker>
+              </div>    
+   
+          </div>
+          
+           <div class="row">
+              <div class="col-md-6">
+                <label>Cancelation Date</label>
+                <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" placeholder="Cancel Date" [nbDatepicker]="cancelDate" formControlName="cancelDate">
+                <nb-datepicker #cancelDate></nb-datepicker>
+            </div>
+                 
+              <div class="col-md-6">
+                <label>Principal Amount Left</label>
+                <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="principalAmt">
+              </div>    
+   
+           </div> 
+          
+           <div class="row">
+              <div class="col-md-6">
+                <label>Amount of LSF (Rs.)</label>
+                <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="amtOfLsf">
+              </div>
+                 
+              <div class="col-md-6">
+                <label>Total of LSF</label>
+                <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="totalLsf">
+              </div>
+              
+              <div class="col-md-12" style="margin-top: 25px;">
+                <p>
+                    value: {{ lsfDetails.value | json}}
+                </p>
+            </div>
+   
+           </div> 
+          </nb-card-body>
+      </nb-card>     
+    </form> 

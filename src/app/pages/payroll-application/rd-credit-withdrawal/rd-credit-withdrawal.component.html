@@ -1,0 +1,64 @@
+
+<form [formGroup]="rdCreditWithdrawal" (ngSubmit)= "onSubmit()">
+
+<nb-card size="medium" accent="warning">
+    
+    <nb-card-header>RD Credit & Withdrawal</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+              
+                <div class="col-md-6">
+                    <label>RD A/C Number</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rdAccountNum">
+                </div>
+                
+                <div class="col-md-6">
+                    <label>Date</label>
+                    <input nbInput fullWidth fieldSize="small" placeholder=" Date " [nbDatepicker]="date" shape="rectangle" status="primary" formControlName="date">
+                    <nb-datepicker #date></nb-datepicker>
+                </div>  
+            </div>
+            
+            <div class="row">
+
+                <div class="col-md-6">
+                  <label>Credit Type</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="creditType">
+                </div> 
+
+                <div class="col-md-6">
+  
+                    <label>Credit Amount</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="creditAmount">
+                </div> 
+            </div>  
+  
+            <div class="row">
+  
+                <div class="col-md-6">
+                    <label>Current RD Balance</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="currentRdBal">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Select Account</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="selectAccount">
+                </div>
+            </div> 
+
+            <div class="row">
+  
+                <div class="col-md-4">
+                    <button style="margin-top: 25px;" nbButton hero fullWidth status="warning">Submit</button>
+                </div>
+
+                <div class="col-md-12" style="margin-top: 25px;">
+                    <p>
+                        value: {{ rdCreditWithdrawal.value | json}}
+                    </p>
+                </div>
+            </div>
+        </nb-card-body>    
+    </nb-card>
+</form>  

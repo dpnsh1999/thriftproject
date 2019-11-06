@@ -1,0 +1,132 @@
+
+<form [formGroup]="loanCreditWithdrawal" (ngSubmit)="onSubmit()">
+
+  <nb-card size="giant" accent="danger">
+    
+    <nb-card-header>Loan credit & withdrawal</nb-card-header>
+    
+    <nb-card-body>
+     
+      <div class="row">
+
+          <div class="col-md-4">
+              <label>Registration Number</label>
+              <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="regNumber">
+            </div>
+
+        <div class="col-md-4">
+          <label>Date</label>
+          <input nbInput fullWidth fieldSize="small" placeholder="Date" [nbDatepicker]="date" shape="rectangle" status="primary" formControlName="date">
+          <nb-datepicker #date></nb-datepicker>
+        </div>
+  
+        <div class="col-md-4">
+           <label>Transaction Type</label>
+           <nb-select fullWidth size="small" shape="rectangle" status="primary" placeholder="Payroll" formControlName="transactionType">
+              <nb-option value="Payroll">Payroll</nb-option>
+              <nb-option value="Paid by FP">Paid by FP</nb-option>
+              <nb-option value="Thrift Interest">Thrift Interest</nb-option>
+              <nb-option value="MR">MR</nb-option>
+              <nb-option value="Loan Int Adj">Loan Int Adj</nb-option>
+              <nb-option value="LED Bulb">LED Bulb</nb-option>
+              <nb-option value="FAFS/MCGF">FAFS/MCGF</nb-option>
+              <nb-option value="Cheque">Cheque</nb-option>
+              <nb-option value="Bank Transfer">Bank Transfer</nb-option>
+              <nb-option value="Bank Charges">Bank Charges</nb-option>
+              <nb-option value="Adjustment">Adjustment</nb-option>
+            </nb-select>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-4">
+          <label>Cheque Number</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="chequeNo">
+        </div>
+  
+        <div class="col-md-8">
+            <label>Description</label>
+            <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="description"></textarea>
+        </div>
+      </div>
+  
+      <div class="row">
+  
+          <div class="col-md-4">
+            <label>Deposite In Account</label>
+            <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="depositeInAcc">
+          </div>
+         
+          <div class="col-md-4">
+            <label>M. Payment</label>
+            <input nbInput fullWidth fieldSize="small" placeholder="" shape="rectangle" status="primary" formControlName="mPayment">
+          </div>
+
+          <div class="col-md-4">
+              <label>Debit Amount</label>
+              <input nbInput fullWidth fieldSize="small" placeholder="" shape="rectangle" status="primary" formControlName="debitAmt">
+           </div>
+      </div>
+
+      <div class="row">
+  
+          <div class="col-md-4">
+            <label>P.Amount Settled</label>
+            <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="pAmtSettled">
+          </div>
+         
+          <div class="col-md-4">
+            <label>Remaining P. Amount</label>
+            <input nbInput fullWidth fieldSize="small" placeholder="" shape="rectangle" status="primary" formControlName="rmngPAmt">
+          </div>
+
+          <div class="col-md-4">
+              <label>Int. Amount Settled</label>
+              <input nbInput fullWidth fieldSize="small" placeholder="" shape="rectangle" status="primary" formControlName="intAmtSettled">
+           </div>
+      </div>
+
+      <div class="row">
+  
+          <div class="col-md-4">
+            <label>Balance Interest</label>
+            <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="balanceInt">
+          </div>
+         
+          <div class="col-md-4">
+            <label>Int. Difference</label>
+            <input nbInput fullWidth fieldSize="small" placeholder="" shape="rectangle" status="primary" formControlName="intDifference">
+          </div>
+
+          <div class="col-md-4">
+              <label>Refund Amount</label>
+              <input nbInput fullWidth fieldSize="small" placeholder="" shape="rectangle" status="primary" formControlName="refundAmt">
+           </div>
+      </div>
+  
+      
+
+      <div class="row">
+
+          <div class="col-md-4">
+              <label>Refund Type</label>
+              <input nbInput fullWidth fieldSize="small" placeholder="" shape="rectangle" status="primary" formControlName="refundType">
+           </div>
+
+          <div class="col-md-4" style="margin-top: 25px;">
+              <nb-checkbox status="danger" formControlName="active">Active</nb-checkbox>
+            </div>
+
+          <div class="col-md-4">
+              <button style="margin-top: 25px;" nbButton hero fullWidth status="danger">Submit</button>
+           </div>
+  
+          <div class="col-md-12" style="margin-top: 25px;">
+            <p>
+                value: {{ loanCreditWithdrawal.value | json}}
+            </p>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+  </form>

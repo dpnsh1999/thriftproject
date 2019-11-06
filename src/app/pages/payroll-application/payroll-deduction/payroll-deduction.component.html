@@ -1,0 +1,213 @@
+
+<form [formGroup]="payrollDeduction" (ngSubmit)= "onSubmit()">
+
+<nb-card accent="danger">
+  
+  <nb-card-header>Payroll Deduction</nb-card-header>
+  
+   <nb-card-body>
+   
+     <div class="row">
+
+       <div class="col-md-4">
+        <label>Client</label>
+        <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="client">
+      </div>
+
+        <div class="col-md-4">
+          <label>Organization</label>
+          <input nbInput fullWidth fieldSize="small" paceholder="BHEE Society" shape="rectangle" status="primary" formControlName="organization"> 
+        </div>
+
+        <div class="col-md-4">
+          <label>Import Error Message</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="importErrorMsg">
+        </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-6">
+        <label>Registration Number</label>
+        <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="regNumber">
+      </div>
+     
+      <div class="col-md-6">
+        <label>Staff Number</label>
+        <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">
+      </div>
+    </div>
+
+    <div class="row">
+       
+        <div class="col-md-6">
+          <label>Payroll Amount</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="payrollAmt">
+        </div>
+
+        <div class="col-md-6">
+          <label>Date</label>
+          <input nbInput fullWidth fieldSize="small" placeholder="Date" [nbDatepicker]="date" shape="rectangle" status="primary" formControlName="date">
+          <nb-datepicker #date></nb-datepicker>
+        </div>
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-6">
+          <button style="margin-top: 25px;" nbButton hero outline fullWidth status="danger">Make adjustment to component</button>
+        </div>
+
+        <div class="col-md-6">
+          <button style="margin-top: 25px;" nbButton outline fullWidth status="danger">Diffrence in amount</button>
+        </div>
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-6">
+          <label>Thrift Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="thriftAmt">
+        </div>
+
+        <div class="col-md-6">
+          <label>Diff. In thrift amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="diffThriftAmt">
+        </div>
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-6">
+          <label>Share Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="shareAmt">
+        </div>
+
+        <div class="col-md-6">
+          <label>Difference In share Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="diffShareAmt">
+        </div>
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-6">
+          <label>Membership Fee Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="membershipFeeAmt">
+        </div>
+
+        <div class="col-md-6">
+          <label>Difference In Membership Fee Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="diffMemberFeeAmt">
+        </div>
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-6">
+          <label>Grossary Loan (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="grossaryAmt">
+        </div>
+
+        <div class="col-md-6">
+          <label>Grossary diff Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="grossaryDiffAmt">
+        </div>
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-6">
+          <label>Loan Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanAmt">
+        </div>
+
+        <div class="col-md-6">
+          <label>Diff in loan Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="diffLoanAmt">
+        </div>
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-6">
+          <label>RD Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rdAmount">
+        </div>
+
+        <div class="col-md-6">
+          <label>Diff in RD Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="diffRdAmt">
+        </div>
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-6">
+          <label>FAFS Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="fafsAmount">
+        </div>
+
+        <div class="col-md-6">
+          <label>Diff in FAFS Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="diffFafsAmt">
+        </div>
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-6">
+          <label>MCGF Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="mcgfAmount">
+        </div>
+
+        <div class="col-md-6">
+          <label>Diff. In MCGF Amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="diffMcgfAmount">
+        </div>
+      </div>
+      
+      <div class="row">
+       
+        <div class="col-md-6">
+          <label>FAFS Non Refundable (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="fafsNonRefundable">
+        </div>
+
+        <div class="col-md-6">
+          <label>Equivalent adjustment value (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="equiAdjustmentValue">
+        </div>
+      </div> 
+
+      <div class="row">
+       
+        <div class="col-md-4">
+          <label>Diffrential Value (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="diffValue">
+        </div>
+
+        <div class="col-md-4">
+          <label>Remaining loan amount (In RS)</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rmngLoanAmt">
+        </div>
+        <div class="col-md-4">
+          <button style="margin-top: 25px;" nbButton hero outline fullWidth status="danger">Comment adjustment</button>
+        </div>
+      </div> 
+
+      <div class="row">
+       
+          <div class="col-md-4">
+              <button style="margin-top: 25px;" nbButton hero fullWidth status="success">Submit</button>
+           </div>
+
+           <div class="col-md-12" style="margin-top: 25px;">
+              <p>
+                  value: {{ payrollDeduction.value | json}}
+              </p>
+          </div>
+        </div> 
+    </nb-card-body>
+  </nb-card>
+</form>

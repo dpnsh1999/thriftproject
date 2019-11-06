@@ -1,0 +1,93 @@
+
+<form [formGroup]="thriftCredit" (ngSubmit)= "onSubmit()">
+
+<nb-card size="large" accent= "warning">
+  
+  <nb-card-header>Thrift Credit</nb-card-header>
+  
+   <nb-card-body>
+   
+     <div class="row">
+
+       <div class="col-md-4">
+        <label>Personal Details bkt</label>
+        <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="personalDetailsBkt">
+      </div>
+
+      <div class="col-md-4">
+         <label>Staff Number</label>
+         <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">
+      </div>
+
+        <div class="col-md-4">
+          <label>Date Of Thrift Deposit</label>
+          <input nbInput fullWidth fieldSize="small" placeholder="Date" [nbDatepicker]="thriftDepositDate" shape="rectangle" status="primary" formControlName="thriftDepositDate">
+          <nb-datepicker #thriftDepositDate></nb-datepicker>
+        </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-6">
+        <label>Transaction Type</label>
+        <nb-select fullWidth size="small" shape="rectangle" status="primary" placeholder="Payroll" formControlName="transactionType">
+          <nb-option value="Payroll">Payroll</nb-option>
+          <nb-option value="Paid by FP">Paid by FP</nb-option>
+          <nb-option value="Thrift Interest">Thrift Interest</nb-option>
+          <nb-option value="MR">MR</nb-option>
+          <nb-option value="Loan Int Adj">Loan Int Adj</nb-option>
+          <nb-option value="LED Bulb">LED Bulb</nb-option>
+          <nb-option value="FAFS/MCGF">FAFS/MCGF</nb-option>
+          <nb-option value="Cheque">Cheque</nb-option>
+          <nb-option value="Bank Transfer">Bank Transfer</nb-option>
+          <nb-option value="Bank Charges">Bank Charges</nb-option>
+          <nb-option value="Adjustment">Adjustment</nb-option>
+        </nb-select>
+      </div>
+     
+      <div class="col-md-6">
+        <label>Cheque Number</label>
+        <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="chequeNumber">
+      </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4">
+          <label>Thrift Amount</label>
+          <input nbInput fullWidth fieldSize="small" placeholder=""shape="rectangle" status="primary" formControlName="thriftAmount">
+        </div>
+       
+        <div class="col-md-4">
+          <label>Withdrawal Amount</label>
+          <input nbInput fullWidth fieldSize="small" placeholder="" shape="rectangle" status="primary" formControlName="withdrawalAmt">
+        </div>
+
+        <div class="col-md-4">
+            <label>Thrift Balance</label>
+            <input nbInput fullWidth fieldSize="small" placeholder="" shape="rectangle" status="primary" formControlName="thriftBalance">
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label>Description</label>
+          <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="description"></textarea>        
+        </div>
+
+        <div class="col-md-6">
+            <button style="margin-top: 25px;" nbButton hero fullWidth status="warning">Submit</button>
+         </div>
+
+         <div class="col-md-12" style="margin-top: 25px;">
+            <p>
+                value: {{ thriftCredit.value | json}}
+            </p>
+        </div> 
+      </div>
+   </nb-card-body>
+ </nb-card>
+</form>
+
+

@@ -1,0 +1,82 @@
+
+<form [formGroup]="grossaryLoan" (ngSubmit)= "onSubmit()">
+
+<nb-card size="large" accent="warning">
+    
+    <nb-card-header>Grossary Loan</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+              
+                <div class="col-md-4">
+                    <label>Grossary Loan bkt</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="grossaryLoanBkt">
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Loan Date</label>
+                    <input nbInput fullWidth fieldSize="small" placeholder=" Date " [nbDatepicker]="loanDate" shape="rectangle" status="primary" formControlName="loanDate">
+                    <nb-datepicker #loanDate></nb-datepicker>
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Loan Amount</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanAmount">
+                </div>
+            </div>
+            
+            <div class="row">
+
+                  <div class="col-md-6">
+                    <label>Installment</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="installment">
+                 </div>
+                
+                 <div class="col-md-6">
+                    <label>EMI amount</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="emiAmount">
+                </div>
+            </div>  
+  
+            <div class="row">
+  
+                <div class="col-md-6">
+                    <label>Credit Amount</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="creditAmount">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Deposit Date</label>
+                    <input nbInput fullWidth fieldSize="small" placeholder=" Date " [nbDatepicker]="depositDate" shape="rectangle" status="primary" formControlName="depositDate">
+                    <nb-datepicker #depositDate></nb-datepicker>
+                </div>
+            </div> 
+
+            <div class="row">
+  
+                <div class="col-md-6">
+                    <label>Debit Date</label>
+                    <input nbInput fullWidth fieldSize="small" placeholder=" Date " [nbDatepicker]="debitDate" shape="rectangle" status="primary" formControlName="debitDate">
+                    <nb-datepicker #debitDate></nb-datepicker>
+                </div>
+
+                <div class="col-md-6" style="margin-top: 25px;">
+                    <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+                </div>
+            </div>
+            
+            <div class="row">
+  
+                <div class="col-md-4">
+                    <button style="margin-top: 25px;" nbButton hero fullWidth status="warning">Submit</button>
+                </div>
+
+                <div class="col-md-12" style="margin-top: 25px;">
+                    <p>
+                        value: {{ grossaryLoan.value | json}}
+                    </p>
+                </div>
+            </div>  
+        </nb-card-body>    
+  </nb-card>
+</form>  

@@ -1,0 +1,84 @@
+
+<form [formGroup]="currentPositionOfLoan" (ngSubmit)= "onSubmit()">
+
+<nb-card size="large" accent="warning">
+    
+    <nb-card-header>Current Position of Loan</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+              
+                <div class="col-md-4">
+                    <label>Count</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="count">
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Type of Loan</label>
+                    <nb-select fullWidth placeholder="Regular Loan" status="primary" size="small" formControlName="loanType">
+                        <nb-option value="Regular Loan">Regular Loan</nb-option>
+                        <nb-option value="Consumer Loan">Consumer Loan</nb-option>
+                        <nb-option value="Emergency Loan">Emergency Loan</nb-option>
+                    </nb-select> 
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Loan Amount</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanAmount">
+                </div>
+            </div>
+            
+            <div class="row">
+
+                  <div class="col-md-6">
+                    <label>Emergency Loan Amount</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="emergLoanAmount">
+                 </div>
+                
+                 <div class="col-md-6">
+                    <label>Total EMI</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="totalEmi">
+                </div>
+            </div>  
+  
+            <div class="row">
+  
+                <div class="col-md-6">
+                    <label>EMI paid This month</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="emiPaidThisMonth">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Principle amount paid this month</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="principleAmtPaidThisMonth">
+                </div>
+            </div> 
+
+            <div class="row">
+  
+                <div class="col-md-6">
+                    <label>Interest amount paid this month</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="intAmtPaidThisMonth">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Remaining Loan Amount</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rmngLoanAmount">
+                </div>
+            </div>
+            
+            <div class="row">
+  
+                <div class="col-md-4">
+                    <button style="margin-top: 25px;" nbButton hero fullWidth status="warning">Submit</button>
+                </div>
+
+                <div class="col-md-12" style="margin-top: 25px;">
+                    <p>
+                        value: {{ currentPositionOfLoan.value | json}}
+                    </p>
+                </div>
+            </div>  
+        </nb-card-body>    
+  </nb-card>
+</form>  

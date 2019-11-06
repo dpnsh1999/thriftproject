@@ -1,0 +1,72 @@
+
+<form [formGroup]= "rdTransaction" (ngSubmit)= "onSubmit()">
+
+<nb-card size="small" accent="info">
+    <nb-card-header>Recurring Deposit Transaction</nb-card-header>
+    <nb-card-body>
+
+      <div class="row">
+
+          <div class="col-md-6">
+              <label>RD A/C No.</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="rdAcountNum">  
+          </div> 
+          
+          <div class="col-md-6">
+            <label>Date</label>
+            <input nbInput fullWidth fieldSize="small" [nbDatepicker]="date" shape="rectangle" status="primary" formControlName="date">
+            <nb-datepicker #date></nb-datepicker>
+          </div>  
+      </div>
+
+      <div class="row">
+        
+        <div class="col-md-6">
+              <label>Deposit Type</label>
+              <nb-select fullWidth size="small" shape="rectangle" status="primary" formControlName="depositType">
+                  <nb-option value="Payroll">Payroll</nb-option>
+                  <nb-option value="Paid by FP">Paid by FP</nb-option>
+                  <nb-option value="Thrift Interest">Thrift Interest</nb-option>
+                  <nb-option value="MR">MR</nb-option>
+                  <nb-option value="Loan Int Adj">Loan Int Adj</nb-option>
+                  <nb-option value="LED Bulb">LED Bulb</nb-option>
+                  <nb-option value="FAFS/MCGF">FAFS/MCGF</nb-option>
+                  <nb-option value="Cheque">Cheque</nb-option>
+                  <nb-option value="Bank Transfer">Bank Transfer</nb-option>
+                  <nb-option value="Bank Charges">Bank Charges</nb-option>
+                  <nb-option value="Adjustment">Adjustment</nb-option>
+                </nb-select>
+        </div> 
+          
+        <div class="col-md-6">
+            <label>Amount of Deposit</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="depositAmount">  
+        </div>  
+      </div>
+    </nb-card-body>  
+</nb-card>   
+
+<nb-card size="small" accent="primary">
+    <nb-card-header>Withdrawal</nb-card-header>
+    <nb-card-body>
+
+      <div class="row">
+
+          <div class="col-md-6">
+              <label>Current Balance of RD</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="rdCurrentBal">  
+          </div>
+          
+          <div class="col-md-4">
+            <button style="margin-top: 25px;" nbButton hero fullWidth status="info">Submit</button>
+          </div>
+
+          <div class="col-md-12" style="margin-top: 25px;">
+              <p>
+                  value: {{ rdTransaction.value | json}}
+              </p>
+          </div>
+      </div>
+    </nb-card-body>  
+  </nb-card>
+</form>  

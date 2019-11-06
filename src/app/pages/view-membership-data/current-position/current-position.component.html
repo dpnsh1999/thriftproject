@@ -1,0 +1,81 @@
+
+<form [formGroup]= "currentPosition" (ngSubmit)= "onSubmit()">
+
+    <nb-card size="small" accent="warning">
+        <nb-card-header>Current Position</nb-card-header>
+        <nb-card-body>
+      
+          <div class="row">
+      
+              <div class="col-md-6">
+                <label>Staff Number</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffNumber">  
+              </div>
+              
+              <div class="col-md-6">
+                  <label>Member Name</label>
+                  <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="memberName">  
+                </div> 
+          </div>
+        </nb-card-body>
+      </nb-card>
+      
+      <nb-card size="medium" accent="danger">
+          <nb-card-header>Balance Details</nb-card-header>
+          <nb-card-body>
+        
+            <div class="row">
+        
+                <div class="col-md-6">
+                  <label>Thrift Balance</label>
+                  <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="thriftBal">  
+                </div>
+                
+                <div class="col-md-6">
+                  <label>Total Share</label>
+                  <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="totalShare">  
+                </div> 
+            </div>
+      
+            <div class="row">
+        
+                <div class="col-md-6">
+                  <label>No Of Active Loan</label>
+                  <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="activeLoanNum">  
+                </div>
+        
+                <div class="col-md-6">
+                  <label>Loan Balance</label>
+                  <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="loanBal">  
+                </div>
+            </div>
+      
+              <div class="row">
+  
+                  <div class="col-md-4">
+                      <label>FAFS Balance</label>
+                      <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="fafsBal">
+                    </div>
+        
+                  <div class="col-md-4">
+                      <label>No of Active RD</label>
+                      <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="activeRdNum">
+                  </div>
+      
+                  <div class="col-md-4">
+                      <label>RD Balance</label>
+                      <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="rdBalance">
+                  </div>
+              </div>
+      
+              <div class="row">
+      
+                  <div class="col-md-12" style="margin-top: 25px;">
+                    <p>
+                        value: {{ currentPosition.value | json }}
+                    </p>
+                  </div>
+              </div>
+          </nb-card-body>
+        </nb-card> 
+    </form>         

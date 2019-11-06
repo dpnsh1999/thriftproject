@@ -1,0 +1,186 @@
+
+<form [formGroup]="CrntPositionOfMember" (ngSubmit)= "onSubmit()">
+
+  <nb-card size="large" accent="primary">
+      
+      <nb-card-header>Member Details</nb-card-header>
+      
+          <nb-card-body>
+              <div class="row">
+                  <div class="col-md-4">
+                      <label>Member Status</label>
+                      <nb-select fullWidth size="small" status="primary" placeholder= "Active" formControlName="memberStatus">
+                          <nb-option value="true" >Active</nb-option>
+                          <nb-option value="false" >Closed</nb-option>
+                      </nb-select>
+                  </div>   
+
+                  <div class="col-md-4">
+                      <label>Type of Reg.</label>
+                      <nb-select fullWidth status="primary" size="small" placeholder= "AETISAN" formControlName="typeOfReg">
+                              <nb-option value="AETISAN">AETISAN</nb-option>
+                              <nb-option value="STAFF">STAFF</nb-option>
+                      </nb-select>    
+                  </div>
+                  
+                  <div class="col-md-4">
+                      <label>Reg. No.</label>
+                      <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="regNumber">
+                  </div>        
+              </div>  
+  
+              <div class="row">
+                  <div class="col-md-4">
+                      <label>Member Name</label>
+                      <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="memberName">
+                  </div>
+
+                  <div class="col-md-4">
+                      <label>Staff No.</label>
+                      <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">
+                  </div>
+                  
+                  <div class="col-md-4">
+                      <label>Gender</label>
+                      <nb-select fullWidth size="small" shape="rectangle" placeholder="SELECT" status="primary" formControlName="gender">
+                          <nb-option value="Male">Male</nb-option>
+                          <nb-option value="Female">Female</nb-option>
+                      </nb-select>
+                  </div>
+                </div>
+
+              <div class="row">
+                  <div class="col-md-4">
+                      <label>Father Name</label>
+                      <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="fatherName">
+                  </div>
+
+                  <div class="col-md-4">
+                      <label>Date of Birth</label>
+                      <input nbInput fullWidth fieldSize="small" placeholder="DOB" [nbDatepicker]="dob" shape="rectangle" status="primary" formControlName="dob">
+                      <nb-datepicker #dob></nb-datepicker>
+                  </div>
+
+                  <div class="col-md-4">
+                      <label>Retirement Date</label>
+                      <input nbInput fullWidth fieldSize="small" placeholder="" [nbDatepicker]="rtDate" shape="rectangle" status="primary" formControlName="rtDate">
+                      <nb-datepicker #rtDate></nb-datepicker>
+                  </div>
+              </div>  
+
+              <div class="row">
+                  <div class="col-md-8">
+                      <label>Current Address</label>
+                      <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="address"></textarea>
+                  </div>
+              </div>
+          </nb-card-body>    
+  </nb-card>    
+  
+  <nb-card size="small" accent="danger">
+      
+          <nb-card-header>Current Position</nb-card-header>
+          
+              <nb-card-body>
+                  <div class="row">
+                      <div class="col-md-4">
+                              <label>Current Thrift Balance</label>
+                              <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="CrntThriftBal">  
+                      </div>
+                      
+                      <div class="col-md-4">
+                          <label>Current Share Balance</label>
+                          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="CrntShareBal">
+                      </div>    
+      
+                      <div class="col-md-4">
+                          <label>Current RD Balance</label>
+                          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="CrntRdBal">
+                      </div>   
+                  </div>  
+      
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label>Loan Balance</label>
+                          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanBal">
+                      </div>
+                      
+                      <div class="col-md-6">
+                          <label>Total FAFS Amount</label>
+                          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="TotalFafsAmt">
+                      </div>
+                  </div>
+        </nb-card-body>
+  </nb-card>           
+  
+  <nb-card size="large" accent="warning">
+      <nb-card-header>Current Position Of Loan</nb-card-header>
+      <nb-card-body>
+          
+          <div class="row">
+              <div class="col-md-6">
+                  <label>Number Of Active Loan</label>
+                  <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="activeLoan">
+              </div>
+  
+              <div class="col-md-6">
+                      <label>Type Of Loan</label>
+                      <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="loanType">
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-6">
+                      <label>Loan Amount</label>
+                      <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="loanAmt">
+              </div>
+
+              <div class="col-md-6">
+                  <label>Emergency Loan Amount</label>
+                  <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="emergLoanAmt">
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-6">
+                      <label>EMI Amount</label>
+                      <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="emiAmt">
+              </div>
+          
+              <div class="col-md-6">
+                      <label>EMI Paid This Month</label>
+                      <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="emiPaidThisMonth">
+              </div>
+          </div>    
+          
+          <div class="row">
+              <div class="col-md-6">
+                      <label>Principle Paid</label>
+                      <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="principlePaid">
+              </div>
+              
+              <div class="col-md-6">
+                  <label>Interest Paid</label>
+                  <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="intPaid">
+              </div>
+          </div>
+  
+          <div class="row">
+              <div class="col-md-6">
+                  <label>Total Remaining Balance</label>
+                  <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="totalRmngBal">
+              </div>
+
+              <div class="col-md-6">
+                  <button style="margin-top: 25px;" nbButton hero fullWidth status="warning">Submit</button>
+               </div>
+
+              <div class="col-md-12" style="margin-top: 25px;">
+                  <p>
+                      value: {{ CrntPositionOfMember.value | json}}
+                  </p>
+              </div>
+          </div>    
+      </nb-card-body>
+  </nb-card>                               
+</form>    

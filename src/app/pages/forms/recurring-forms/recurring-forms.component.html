@@ -1,0 +1,104 @@
+
+<form [formGroup]="rdDetails" (ngSubmit)="onSubmit()">
+
+ <nb-card size="large" accent="primary">
+    
+    <nb-card-header>RD Details</nb-card-header>
+    
+      <nb-card-body>
+          <div class="row">
+             <div class="col-md-4">
+               <label>Status Of RD</label>
+               <nb-select fullWidth status="primary" size="small" placeholder="Open" formControlName="statusOfRd">
+                  <nb-option value="Open">Open</nb-option>
+                  <nb-option value="Closed">Closed</nb-option>
+                  <nb-option value="Closed (Pre-Matured)">Closed (Pre-Matured) </nb-option>
+                  <nb-option value="Cancel">Cancel</nb-option>
+                  <nb-option value="Completed">Completed</nb-option>
+                  <nb-option value="Retiring">Retiring</nb-option>
+                </nb-select>             
+               </div>
+                
+             <div class="col-md-4">
+               <label>Registration No.</label>
+               <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="registrationNumber">
+             </div>    
+  
+             <div class="col-md-4">
+               <label>RD Account No.</label>
+               <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rdAccountNumber">
+             </div>   
+        </div>  
+      
+        <div class="row">
+          <div class="col-md-4">
+            <label>Member Name</label>
+            <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="memberName">
+
+          </div>
+              
+          <div class="col-md-4">
+            <label>Staff No. </label>
+            <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">
+ 
+          </div>  
+  
+          <div class="col-md-4">
+            <label>RD Amount</label>
+            <input type="text" nbInput fullWidth fieldSize="small" placeholder="0.0" shape="rectangle" status="primary" formControlName="rdAmount">
+
+          </div>   
+        </div> 
+        
+        <div class="row">
+            <div class="col-md-4">
+              <label>Period (In Years)</label>
+              <input type="text" nbInput fullWidth fieldSize="small" placeholder="0.0" shape="rectangle" status="primary" formControlName="period">
+            </div>
+                
+            <div class="col-md-4">
+              <label>Interest Rate (%)</label>
+              <input type="text" nbInput fullWidth fieldSize="small" placeholder="0.0" shape="rectangle" status="primary" formControlName="interestRate">
+            </div>
+
+            <div class="col-md-4">
+                <label>RD Opening Date</label>
+                <input nbInput fullWidth fieldSize="small" [nbDatepicker]="rdOpeningDate" shape="rectangle" status="primary" formControlName="rdOpeningDate">
+                <nb-datepicker #rdOpeningDate></nb-datepicker>            
+            </div>
+        </div>   
+
+        <div class="row">
+            <div class="col-md-4">
+              <label>RD Maturity Date</label>
+              <input nbInput fullWidth fieldSize="small" [nbDatepicker]="rdMaturityDate" shape="rectangle" status="primary" formControlName="rdMaturityDate">
+              <nb-datepicker #rdMaturityDate></nb-datepicker>             
+            </div>
+                
+            <div class="col-md-4">
+              <label>Maturity Amt.</label>
+              <input type="text" nbInput fullWidth fieldSize="small" placeholder="0.0" shape="rectangle" status="primary" formControlName="maturityAmount">
+            </div>
+
+            <div class="col-md-4">
+                <label>Total Payable Interest</label>
+                <input type="text" nbInput fullWidth fieldSize="small" placeholder="0.00" shape="rectangle" status="primary" formControlName="payableInterest">
+            </div>
+        </div> 
+        
+        <div class="row">
+            
+            <div class="col-md-4">
+                <button style="margin-top: 25px;" nbButton hero fullWidth status="success">Submit</button>
+             </div>
+
+            <div class="col-md-12" style="margin-top: 25px;">
+                <p>
+                    value: {{ rdDetails.value | json}}
+                </p>
+            </div>
+        </div>  
+    </nb-card-body> 
+  </nb-card>   
+</form>  
+      

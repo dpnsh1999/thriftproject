@@ -1,0 +1,130 @@
+
+<form [formGroup]="loanCredit" (ngSubmit)= "onSubmit()">
+
+<nb-card size="giant" accent="warning">
+  
+    <nb-card-header>Loan Credit</nb-card-header>
+    
+     <nb-card-body>
+     
+       <div class="row">
+  
+         <div class="col-md-4">
+          <label>Personal ID</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="personalId">
+        </div>
+  
+        <div class="col-md-4">
+           <label>Loan ID</label>
+           <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanId">
+        </div>
+  
+          <div class="col-md-4">
+            <label>Deposit ID</label>
+            <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="depositId">
+          </div>
+      </div>
+  
+      <div class="row">
+  
+        <div class="col-md-6">
+          <label>Date Of Deposite</label>
+          <input nbInput fullWidth fieldSize="small" placeholder="Date" [nbDatepicker]="depositDate" shape="rectangle" status="primary" formControlName="depositDate">
+          <nb-datepicker #depositDate></nb-datepicker>
+        </div>
+       
+        <div class="col-md-6">
+          <label>Deposite Type</label>
+          <nb-select fullWidth size="small" shape="rectangle" status="primary" placeholder="Payroll" formControlName="depositType">
+              <nb-option value="Payroll">Payroll</nb-option>
+              <nb-option value="Paid by FP">Paid by FP</nb-option>
+              <nb-option value="Thrift Interest">Thrift Interest</nb-option>
+              <nb-option value="MR">MR</nb-option>
+              <nb-option value="Loan Int Adj">Loan Int Adj</nb-option>
+              <nb-option value="LED Bulb">LED Bulb</nb-option>
+              <nb-option value="FAFS/MCGF">FAFS/MCGF</nb-option>
+              <nb-option value="Cheque">Cheque</nb-option>
+              <nb-option value="Bank Transfer">Bank Transfer</nb-option>
+              <nb-option value="Bank Charges">Bank Charges</nb-option>
+              <nb-option value="Adjustment">Adjustment</nb-option>
+            </nb-select>
+        </div>
+      </div>
+  
+      <div class="row">
+  
+          <div class="col-md-4">
+            <label>Account  Number</label>
+            <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="accountNumber">
+          </div>
+         
+          <div class="col-md-4">
+            <label>Monthly Payment</label>
+            <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="monthlyPayment">
+          </div>
+  
+          <div class="col-md-4">
+              <label>Debit Amount</label>
+              <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="debitAmt">
+          </div>
+  
+        </div>
+  
+        <div class="row">
+  
+            <div class="col-md-4">
+              <label>Principle Amount Settled</label>
+              <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="principleAmtSettled">
+            </div>
+           
+            <div class="col-md-4">
+              <label>Interest Amount Settled</label>
+              <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="intAmountSettled">
+            </div>
+    
+            <div class="col-md-4">
+                <label>Remaining Principle Amount</label>
+                <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rmngPrincipleAmt">
+            </div>
+    
+        </div>
+
+        <div class="row">
+  
+            <div class="col-md-4">
+              <label>Refund Type</label>
+              <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="refundType">
+            </div>
+           
+            <div class="col-md-4">
+              <label>Refund Amount</label>
+              <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="refundAmt">
+            </div>
+    
+            <div class="col-md-4">
+                <label>Refund Date</label>
+                <input nbInput fullWidth fieldSize="small" placeholder="Date" [nbDatepicker]="refundDate" shape="rectangle" status="primary" formControlName="refundDate">
+                <nb-datepicker #refundDate></nb-datepicker>
+            </div>
+    
+        </div>
+
+        <div class="row">
+  
+          <div class="col-md-4">
+              <button style="margin-top: 25px;" nbButton hero fullWidth status="warning">Submit</button>
+          </div>
+
+          <div class="col-md-12" style="margin-top: 25px;">
+              <p>
+                  value: {{ loanCredit.value | json}}
+              </p>
+          </div>
+    
+        </div>
+    </nb-card-body>
+  </nb-card>
+</form>  
+  
+  
+  

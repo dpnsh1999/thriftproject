@@ -1,0 +1,76 @@
+
+<form [formGroup]="personalDetails" (ngSubmit)= "onSubmit()">
+
+<nb-card size="medium" accent="success">
+  
+  <nb-card-header>Personal Details</nb-card-header>
+  
+   <nb-card-body>
+   
+     <div class="row">
+
+       <div class="col-md-4">
+        <label>Membership status</label>
+        <nb-select fullWidth size="small" placeholder="Active" shape="rectangle" status="primary" formControlName="membershipStatus">
+          <nb-option value="Active">Active</nb-option>
+          <nb-option value="Closed">Closed</nb-option>
+          <nb-option value="Transfered">Transfered</nb-option>
+        </nb-select>
+      </div>
+
+        <div class="col-md-4">
+          <label>Type of reg</label>
+          <nb-select fullWidth placeholder="AETISAN" status="primary" size="small" formControlName="regType">
+            <nb-option value="AETISAN">AETISAN</nb-option>
+            <nb-option value="STAFF">STAFF</nb-option>
+          </nb-select> 
+        </div>
+
+        <div class="col-md-4">
+          <label>Registration Number</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="regNumber">
+        </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <label>Staff Number</label>
+        <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">
+      </div>
+     
+      <div class="col-md-4">
+        <label>Member Name</label>
+        <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="memberName">
+      </div>
+
+      <div class="col-md-4">
+        <label>Date Of Membership</label>
+        <input nbInput fullWidth fieldSize="small" placeholder="Date" [nbDatepicker]="membershipDate" shape="rectangle" status="primary" formControlName="membershipDate">
+        <nb-datepicker #membershipDate></nb-datepicker>
+      </div>
+    </div>
+
+    <div class="row">
+       
+        <div class="col-md-4">
+          <label>Membership Number</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="membershipNumber">
+        </div>
+
+        <div class="col-md-4">
+            <button style="margin-top: 25px;" nbButton hero fullWidth status="success">Submit</button>
+         </div>
+
+         <div class="col-md-12" style="margin-top: 25px;">
+            <p>
+                value: {{ personalDetails.value | json}}
+            </p>
+        </div>
+
+      </div>
+    </nb-card-body>
+  </nb-card>
+</form>
+
+

@@ -1,0 +1,76 @@
+
+<form [formGroup]= "yearlyDetails" (ngSubmit)= "onSubmit()">
+
+    <nb-card size="large" accent="warning">
+        <nb-card-header>Yearly Details</nb-card-header>
+        <nb-card-body>
+      
+          <div class="row">
+      
+              <div class="col-md-6">
+                <label>Staff Number</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffNumber">  
+            </div> 
+            
+            <div class="col-md-6">
+                <label>Entry Date</label>
+                <input nbInput fullWidth fieldSize="small" placeholder="Entry Date" [nbDatepicker]="entryDate" shape="rectangle" status="primary" formControlName="entryDate">
+                <nb-datepicker #entryDate></nb-datepicker>
+            </div>
+          </div>
+    
+          <div class="row">
+      
+              <div class="col-md-4">
+                <label>FAFS Deposite</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="fafsDeposite">  
+              </div>
+      
+              <div class="col-md-4">
+                <label>FAFS Withdrawal</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="fafsWithdrawal">  
+              </div>
+
+              <div class="col-md-4">
+                <label>FAFS Balance</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="fafsBalance">  
+              </div>
+          </div>
+    
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label>MCGF Deposite</label>
+                    <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="mcgfDeposite">
+                  </div>
+      
+                <div class="col-md-4">
+                    <label>MCGF Withdrawal</label>
+                    <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="mcgfWithdrawal">
+                </div>
+    
+                <div class="col-md-4">
+                    <label>MCGF Amount</label>
+                    <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="mcgfAmt">
+                </div>
+            </div>
+         
+            <div class="row">
+          
+                <div class="col-md-12">
+                    <label>Description</label>
+                    <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="description"></textarea>            
+                </div>
+            </div>
+    
+            <div class="row">
+    
+                <div class="col-md-12" style="margin-top: 25px;">
+                  <p>
+                      value: {{ yearlyDetails.value | json }}
+                  </p>
+                </div>
+            </div>
+        </nb-card-body>
+      </nb-card> 
+    </form>         

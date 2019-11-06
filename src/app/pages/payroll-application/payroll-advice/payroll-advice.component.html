@@ -1,0 +1,95 @@
+
+<form [formGroup]="payrollAdvice" (ngSubmit)= "onSubmit()">
+
+<nb-card size="medium" accent="danger">
+  
+  <nb-card-header>Payroll Advice</nb-card-header>
+  
+   <nb-card-body>
+   
+     <div class="row">
+
+       <div class="col-md-4">
+        <label>Registration No.</label>
+        <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="registrationNum">
+      </div>
+
+        <div class="col-md-4">
+          <label>Type of reg</label>
+          <nb-select fullWidth placeholder="AETISAN" status="primary" size="small" placeholder="AETISAN" formControlName="regType">
+            <nb-option value="AETISAN">AETISAN</nb-option>
+            <nb-option value="STAFF">STAFF</nb-option>
+          </nb-select> 
+        </div>
+
+        <div class="col-md-4">
+          <label>Reg Number</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="regNumber">
+        </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <label>Staff Number</label>
+        <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">
+      </div>
+     
+      <div class="col-md-4">
+        <label>Member Name</label>
+        <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="memberName">
+      </div>
+
+      <div class="col-md-4">
+        <label>Thrift</label>
+        <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="thrift">
+      </div>
+    </div>
+
+    <div class="row">
+       
+        <div class="col-md-4">
+          <label>RD Balance</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rdBalance">
+        </div>
+
+        <div class="col-md-4">
+          <label>Grossary Balance</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="grossaryBal">
+        </div>
+
+        <div class="col-md-4">
+          <label>Recovery Email</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="recoveryEmail">
+        </div>
+
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-4">
+          <label>Loan EMI</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanEmi">
+        </div>
+
+        <div class="col-md-4">
+          <label>Total</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="total">
+        </div>
+
+        <div class="col-md-4">
+            <button style="margin-top: 25px;" nbButton hero fullWidth status="danger">Submit</button>
+         </div>
+
+         <div class="col-md-12" style="margin-top: 25px;">
+            <p>
+                value: {{ payrollAdvice.value | json}}
+            </p>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</form>  
+
+
+

@@ -1,0 +1,231 @@
+
+<form [formGroup]="finalPaymentDetails" (ngSubmit)= "onSubmit()">
+
+    <nb-card size="small" accent="primary">
+        
+        <nb-card-header>Member Details</nb-card-header>
+        
+            <nb-card-body>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Staff Number</label>
+                        <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNum">
+                    </div> 
+                    
+                    <div class="col-md-6">
+                        <label>Member Name</label>
+                        <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="memberName">
+                    </div>       
+                </div>  
+    
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <label>Date Of Final Payment</label>
+                        <input nbInput fullWidth fieldSize="small" placeholder="Final Payment Date" [nbDatepicker]="finalPaymentDate" shape="rectangle" status="primary" formControlName="finalPaymentDate">
+                        <nb-datepicker #finalPaymentDate></nb-datepicker>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <label>Date of Death</label>
+                        <input nbInput fullWidth fieldSize="small" placeholder="Death Date" [nbDatepicker]="deathDate" shape="rectangle" status="primary" formControlName="deathDate ">
+                        <nb-datepicker #deathDate></nb-datepicker>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Reason Settlement</label>
+                        <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="reasonSettlement">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Name Of Nominee</label>
+                        <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="nomineeName">
+                    </div>
+    
+                </div>
+            </nb-card-body>    
+    </nb-card> 
+
+    <nb-card size="giant" accent="success">
+        
+            <nb-card-header>ADD</nb-card-header>
+            
+                <nb-card-body>
+                    <div class="row">
+                        <div class="col-md-6">
+                                <label>RD Amount</label>
+                                <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rdAmt ">  
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label>Interest On RD</label>
+                            <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rdInt ">
+                        </div>      
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                                <label>Thrift Amount</label>
+                                <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="thriftAmt ">  
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label>Interest On Thrift</label>
+                            <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="thriftInt">
+                        </div>      
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                          <label>FAFS</label>
+                          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="fafs ">  
+                        </div>    
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-md-6">
+                          <label>FAFS Death Payment</label>
+                          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="fafsDeathPayment ">  
+                      </div>
+                      
+                      <div class="col-md-6">
+                          <label>Share Amount</label>
+                          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="shareAmt">
+                      </div>      
+                  </div>
+                  
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label>Other Deposite</label>
+                          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="otherDeposite ">  
+                      </div>
+                      
+                      <div class="col-md-6">
+                          <label>Pardoned Amount</label>
+                          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="pardonedAmt">
+                      </div>      
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button style="margin-top: 25px;" nbButton hero outline fullWidth status="success">Calculate</button>
+                    </div>  
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label>Total Payment (RS)</label>
+                          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="totalPayment">  
+                      </div>
+                      
+                      <div class="col-md-6">
+                          <label>Pay By</label>
+                          <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="payBy">
+                      </div>      
+                  </div>
+       </nb-card-body>    
+  </nb-card>       
+    
+    <nb-card size="small" accent="warning">
+        <nb-card-header>LESS</nb-card-header>
+        <nb-card-body>
+      
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Loan Amount</label>
+                    <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="loanAmt">
+                </div>
+    
+                <div class="col-md-6">
+                    <label>Interest On Loan</label>
+                    <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="loanInt">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Any Other Recovery</label>
+                    <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="otherRecovery">
+                </div>
+    
+                <div class="col-md-6">
+                    <label>Total Recovery RS</label>
+                    <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="totalRecovery">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                   <button style="margin-top: 25px;" nbButton hero fullWidth status="warning">Total</button>
+                </div>
+    
+                <div class="col-md-6">
+                    <label>Net Payable Recoverable</label>
+                    <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="netPayRecovery">
+                </div>
+            </div>
+      </nb-card-body>
+  </nb-card>    
+    
+                                   
+    <nb-card size="large" accent="danger">
+            <nb-card-header>Bank Details</nb-card-header>
+            <nb-card-body formGroupName="bank">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Bank Name</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="bankName">
+                    </div>
+                
+                    <div class="col-md-4">
+                        <label>Cheque Number</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="chequeNum">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Amount</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" status="primary" fieldSize="small" formControlName="amount">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Amounts In Words</label>
+                        <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="AmtInWords"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="col-md-6" style="margin-top: 25px;">
+                      <nb-checkbox status="success" formControlName="approved">Approved</nb-checkbox>
+                  </div> 
+            
+                  <div class="col-md-6">
+                    <button style="margin-top: 25px;" nbButton outline hero fullWidth status="danger">Print Cheque</button>
+                  </div>    
+               </div>
+
+               <div class="row">
+
+                  <div class="col-md-6">
+                      <button style="margin-top: 25px;" nbButton outline hero fullWidth status="danger">A/C Close</button>
+                  </div>
+
+                  <div class="col-md-6" style="margin-top: 25px;">
+                      <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+                  </div>         
+               </div>
+
+               <div class="row">
+
+                  <div class="col-md-12" style="margin-top: 25px;">
+                      <p>
+                          value: {{ finalPaymentDetails.value | json}}
+                      </p>
+                  </div>
+              </div> 
+            </nb-card-body>
+        </nb-card>    
+     </form>            

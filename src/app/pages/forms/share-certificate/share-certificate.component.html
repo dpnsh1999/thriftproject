@@ -1,0 +1,123 @@
+
+<form [formGroup]= "genCertificate" (ngSubmit)= "onSubmit()">
+
+<nb-card size="medium" accent="success">
+    <nb-card-header>General Certificate</nb-card-header>
+    <nb-card-body>
+  
+      <div class="row">
+          
+          <div class="col-md-4">
+              <label>Printed Certificate No.</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="printCertificateNum">
+          </div>
+
+          <div class="col-md-4">
+              <label>Date of Allocated</label>
+              <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="allocatedDate" formControlName="allocatedDate">
+              <nb-datepicker #allocatedDate></nb-datepicker>
+          </div>
+
+         <div class="col-md-4">
+           <label>No. Prited at Back</label>
+           <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="numPritedAtBack">
+         </div>
+      </div>
+
+      <div class="row">
+  
+          <div class="col-md-4">
+            <label>Staff No.</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffNumber">  
+          </div>
+  
+          <div class="col-md-4">
+              <button nbButton fullWidth status="success" style="margin-top: 25px;">Gen Certificate</button>  
+          </div>
+      </div>
+
+        <div class="row">
+  
+            <div class="col-md-4">
+              <label>Member Name</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="memberName">
+            </div>
+      
+            <div class="col-md-4">
+                <label>Father Name</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="fatherName">
+            </div>
+        </div> 
+
+        <div class="row">
+  
+            <div class="col-md-4">
+              <label>Share Bal.</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="shareBalance">
+            </div>
+      
+            <div class="col-md-4">
+                <label>No. of Share</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="numOfShare">
+            </div>
+
+            <div class="col-md-4">
+                <button nbButton fullWidth status="success" style="margin-top: 25px;">Print Certificate</button>  
+            </div>
+        </div>  
+    </nb-card-body>
+</nb-card> 
+
+<nb-card size="small" accent="warning">
+  <nb-card-header>Share List</nb-card-header>
+  <nb-card-body>
+
+    <div class="row">
+        
+        <div class="col-md-4">
+            <label>Share ID</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="shareId">
+        </div>
+
+        <div class="col-md-4">
+            <label>Date of Allocated</label>
+            <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="allocateDate" formControlName="allocateDate">
+            <nb-datepicker #allocateDate></nb-datepicker>
+        </div>
+
+       <div class="col-md-4">
+          <label>Share Allocated From</label>
+          <nb-select fullWidth status="primary" size="small" formControlName="allocatedForm">
+           <nb-option value="Adjustment">Adjustment</nb-option>
+           <nb-option value="Loan">Loan</nb-option>
+           <nb-option value="New Member">New Member</nb-option>
+           <nb-option value="Thrift">Thrift</nb-option>
+         </nb-select> 
+       </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4">
+          <label>Share Value</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="shareValue">  
+        </div>
+
+        <div class="col-md-4">
+          <label>Share</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="share">
+        </div>
+
+        <div class="col-md-4">
+            <button style="margin-top: 25px;" nbButton hero fullWidth status="warning">Submit</button>
+         </div>
+
+         <div class="col-md-12" style="margin-top: 25px;">
+            <p>
+                value: {{ genCertificate.value | json}}
+            </p>
+        </div>
+    </div>
+  </nb-card-body>
+  </nb-card>  
+</form>               

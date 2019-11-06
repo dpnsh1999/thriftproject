@@ -1,0 +1,227 @@
+<form [formGroup]="totalBalance" (ngSubmit)= "onSubmit()">
+
+<nb-card size="small" accent="primary">
+        
+    <nb-card-header>Standard Deduction Details of  Member</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Member Name</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="memberName"> 
+                </div>
+                
+                <div class="col-md-6">
+                    <label>Staff Number</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNo">
+                </div> 
+            </div>  
+
+            <div class="row">    
+                <div class="col-md-6">
+                    <label>Registration Number</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="regNumber">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Date of Entry</label>
+                    <input nbInput fullWidth fieldSize="small" placeholder="Entry Date" [nbDatepicker]="dateOfEntry" shape="rectangle" status="primary" formControlName="dateOfEntry">
+                    <nb-datepicker #dateOfEntry></nb-datepicker>
+                </div>
+            </div>  
+        </nb-card-body>    
+</nb-card>
+
+<nb-card size="small" accent="info">
+        
+    <nb-card-header>Thrift Summary as on "Current Date"</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Monthly Thrift Amount (RS)</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="monthlyThriftAmt"> 
+                </div>
+                
+                <div class="col-md-6">
+                    <label>Opening Balance Of Thrift (RS)</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="thriftOpngBal">
+                </div> 
+            </div>  
+
+            <div class="row">    
+                <div class="col-md-6">
+                    <label>Total Thrift Balance</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="totalThriftBal">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Thrift Interest Paid</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="thriftIntPaid">
+                </div>
+            </div>  
+        </nb-card-body>    
+</nb-card>
+
+<nb-card size="small" accent="warning">
+        
+    <nb-card-header>RD Summary as on "Current Date"</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>RD Amount</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rdAmt"> 
+                </div>
+                
+                <div class="col-md-6">
+                    <label>Opening Balance Of RD (RS)</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="opngBal">
+                </div> 
+            </div>  
+
+            <div class="row">    
+                <div class="col-md-6">
+                    <label>Total RD Balance</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="totalRdBal">
+                </div>
+            </div>  
+        </nb-card-body>    
+</nb-card>
+
+<nb-card size="small" accent="danger">
+        
+    <nb-card-header>FAFS Summary as on "Current date"</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Yearly FAFS Amount (Rs)</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="yearlyFafsAmt"> 
+                </div>
+                
+                <div class="col-md-6">
+                    <label>Total FAFS Amount (Rs)</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="totalFafsAmt">
+                </div> 
+            </div>  
+        </nb-card-body>    
+</nb-card>
+
+<nb-card size="small" accent="primary">
+        
+    <nb-card-header>Share summaryas on "Current Date"</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Opening Bal. of Share (Rs)</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="shareOpngBal"> 
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Total Value Of Share</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="totalShareValue">
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Total Number Of Share</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="totalShare">
+                </div> 
+            </div>  
+        </nb-card-body>    
+</nb-card>
+
+<nb-card size="small" accent="info">
+        
+    <nb-card-header>Loan Summary as on "Current Date"</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Opening Bal. of Loan</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanOpngBal"> 
+                </div>
+                
+                <div class="col-md-4">
+                    <label>No Of Loan</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="numOfLoan">
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Loan Amount</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanAmt">
+                </div> 
+            </div>  
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Loan Excess Amount (Rs)</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanExcessAmt"> 
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Loan EMI</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanEmi">
+                </div>
+            </div>  
+        </nb-card-body>    
+</nb-card>
+
+<nb-card size="small" accent="warning">
+        
+    <nb-card-header>LIC Summary as on "Current Date"</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Total Bal of LIC (Rs)</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="licTotalBal"> 
+                </div>
+                
+                <div class="col-md-6">
+                    <label>MCG Amount</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="mcgAmt">
+                </div> 
+            </div>  
+        </nb-card-body>    
+</nb-card>
+
+<nb-card size="small" accent="danger">
+        
+    <nb-card-header>Summary of Deductions</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Total Monthly Deduction (Rs)</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="monthlyDeduction"> 
+                </div>
+                
+                <div class="col-md-6">
+                    <label>Total Advised Deduction (Rs)</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="TotalAdviseDeduction">
+                </div> 
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <button style="margin-top: 25px;" nbButton hero outline fullWidth status="danger">Generate current All Balance</button> 
+                </div>
+                
+                <div class="col-md-6" style="margin-top: 25px;">
+                    <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+                </div> 
+            </div>
+
+            <div class="row">
+                
+                <div class="col-md-12" style="margin-top: 25px;">
+                    <p>
+                        value: {{ totalBalance.value | json}}
+                    </p>
+                </div> 
+            </div>
+        </nb-card-body>    
+</nb-card>
+</form>

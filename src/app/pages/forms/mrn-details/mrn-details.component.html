@@ -1,0 +1,147 @@
+
+<form [formGroup]="mrnDetails" (ngSubmit)= "onSubmit()">
+
+<nb-card  accent="danger">
+    
+    <nb-card-header>MRN Details</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Client</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" placeholder="BHEE Thrift" shape="rectangle" status="primary" formControlName="client">    
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Organization</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" placeholder="BHEE Society" status="primary" formControlName="organization">
+                </div>    
+
+                <div class="col-md-4">
+                    <label>Transaction No.</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="transactionNum">
+                </div>   
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Transaction Date</label>
+                    <input nbInput fullWidth fieldSize="small" [nbDatepicker]="transactionDate" shape="rectangle" status="primary" formControlName="transactionDate">
+                    <nb-datepicker #transactionDate></nb-datepicker>
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Staff Number</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">
+                </div>    
+
+                <div class="col-md-4">
+                    <label>Name</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="name">
+                </div>   
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                  <label>Payment For</label>
+                  <nb-select fullWidth size="small" placeholder="Loan" status="primary" formControlName="paymentFor">
+                      <nb-option value="Loan" >Loan</nb-option>
+                      <nb-option value="FD" >FD</nb-option>
+                      <nb-option value="MOMENTO" >MOMENTO</nb-option>
+                      <nb-option value="Thrift" >Thrift</nb-option>
+                  </nb-select>  
+              </div>
+                
+              <div class="col-md-4">
+                  <label>Payment Type</label>
+                  <nb-select fullWidth size="small" placeholder="Cash" status="primary" formControlName="paymentType">
+                      <nb-option value="Cash" >Cash</nb-option>
+                      <nb-option value="Cheque" >Cheque</nb-option>
+                      <nb-option value="Transfer" >Transfer</nb-option>
+                  </nb-select>
+              </div>    
+
+              <div class="col-md-4">
+                  <label>Payment Amount</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="paymentAmt">
+              </div>   
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                  <label>Amount In Words</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="amtInWords">
+                </div>
+                  
+                <div class="col-md-4">
+                  <label>Cheque Date</label>
+                  <input nbInput fullWidth fieldSize="small" [nbDatepicker]="chequeDate" shape="rectangle" status="primary" formControlName="chequeDate">
+                  <nb-datepicker #chequeDate></nb-datepicker>
+                </div>    
+  
+                <div class="col-md-4">
+                  <label>Cheque No.</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="chequeNumber">
+                </div>   
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                  <label>Cheque Amount</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="chequeAmount">
+                </div>
+                  
+                <div class="col-md-4">
+                  <label>Cheque Bank</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="chequeBank">
+                </div>    
+  
+                <div class="col-md-4">
+                  <label>Cheque Branch</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="chequeBranch">
+                </div>   
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                  <label>Description</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="description">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                  <nb-checkbox status="success" formControlName="chequeClear">Cheque Clear</nb-checkbox>
+                </div>
+                    
+                <div class="col-md-4">
+                  <nb-checkbox status="danger" formControlName="chequeNotClear">Cheque Not Clear</nb-checkbox>
+                </div>
+
+                <div class="col-md-4">
+                  <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+                </div>   
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                  <button nbButton hero fullWidth status="success">Print Recipt</button>
+                </div>
+                    
+                <div class="col-md-4">
+                  <button nbButton hero fullWidth status="danger">Payment Process</button>
+                </div>
+                
+                <div class="col-md-4">
+                  <button  nbButton hero fullWidth status="success">Submit</button>
+                </div>
+
+                <div class="col-md-12" style="margin-top: 25px;">
+                    <p>
+                        value: {{ mrnDetails.value | json}}
+                    </p>
+                </div>
+            </div>
+        </nb-card-body>
+     </nb-card>        
+  </form>   

@@ -1,0 +1,179 @@
+
+<form [formGroup]="rdCreditWithdrawal" (ngSubmit)= "onSubmit()">
+
+<nb-card size="small" accent= "warning">
+  
+    <nb-card-header>RD Credit</nb-card-header>
+    
+     <nb-card-body>
+     
+       <div class="row">
+  
+         <div class="col-md-4">
+          <label>Registration Number</label>
+          <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="regNumber">
+        </div>
+  
+        <div class="col-md-4">
+           <label>RD account Number</label>
+           <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rdAccountNum">
+        </div>
+  
+          <div class="col-md-4">
+            <label>Date</label>
+            <input nbInput fullWidth fieldSize="small" placeholder="Date" [nbDatepicker]="date" shape="rectangle" status="primary" formControlName="date">
+            <nb-datepicker #date></nb-datepicker>
+          </div>
+      </div>
+  
+      <div class="row">
+  
+        <div class="col-md-6">
+          <label>Deposit Type</label>
+          <nb-select fullWidth size="small" placeholder="Payroll" shape="rectangle" status="primary" placeholder="Payroll" formControlName="depositType">
+            <nb-option value="Payroll">Payroll</nb-option>
+            <nb-option value="Paid by FP">Paid by FP</nb-option>
+            <nb-option value="Thrift Interest">Thrift Interest</nb-option>
+            <nb-option value="MR">MR</nb-option>
+            <nb-option value="Loan Int Adj">Loan Int Adj</nb-option>
+            <nb-option value="LED Bulb">LED Bulb</nb-option>
+            <nb-option value="FAFS/MCGF">FAFS/MCGF</nb-option>
+            <nb-option value="Cheque">Cheque</nb-option>
+            <nb-option value="Bank Transfer">Bank Transfer</nb-option>
+            <nb-option value="Bank Charges">Bank Charges</nb-option>
+            <nb-option value="Adjustment">Adjustment</nb-option>
+          </nb-select>
+        </div>
+       
+        <div class="col-md-6">
+          <label>Amount Of Deposit</label>
+          <input nbInput fullWidth fieldSize="small" placeholder="" shape="rectangle" status="primary" formControlName="depositAmt">
+        </div>
+      </div>
+  
+      <div class="row">
+  
+          <div class="col-md-4">
+            <label>Received cheque number</label>
+            <input nbInput fullWidth fieldSize="small" placeholder=""shape="rectangle" status="primary" formControlName="receiveChequeNum">
+          </div>
+         
+          <div class="col-md-4">
+            <label>Received Cheque Date</label>
+            <input nbInput fullWidth fieldSize="small" placeholder="" [nbDatepicker]="receiveChequeDate" shape="rectangle" status="primary" formControlName="receiveChequeDate">
+            <nb-datepicker #receiveChequeDate></nb-datepicker>
+          </div>
+  
+          <div class="col-md-4">
+              <label>Name Of Bank</label>
+              <input nbInput fullWidth fieldSize="small" placeholder="SBI" shape="rectangle" status="primary" formControlName="bankName">
+          </div>
+  
+        </div>
+    </nb-card-body>
+  </nb-card>
+
+
+  <nb-card size="large" accent="danger">
+  
+      <nb-card-header>Withdrawal</nb-card-header>
+      
+       <nb-card-body formGroupName="withdrawal">
+       
+         <div class="row">
+    
+           <div class="col-md-4">
+            <label>Current Balance Of RD</label>
+            <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rdCurrentBal">
+          </div>
+    
+          <div class="col-md-4">
+             <label>RD interest Rate</label>
+             <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rdIntRate">
+          </div>
+    
+            <div class="col-md-4">
+              <label>Interest Paid</label>
+              <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="interestPaid">
+            </div>
+        </div>
+    
+        <div class="row">
+    
+          <div class="col-md-4">
+            <label>Period Of RD</label>
+            <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rdPeriod">
+          </div>
+         
+          <div class="col-md-4">
+            <label>Principle Amount</label>
+            <input nbInput fullWidth fieldSize="small" placeholder="" shape="rectangle" status="primary" formControlName="principleAmt">
+          </div>
+
+          <div class="col-md-4">
+              <label>Total RD balance</label>
+              <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="rdTotalBal">
+          </div>
+        </div>
+    
+        <div class="row">
+
+            <div class="col-md-4">
+              <label>Date Of RD Withdrawal</label>
+              <input nbInput fullWidth fieldSize="small" placeholder="" [nbDatepicker]="rdWithdrawalDate" shape="rectangle" status="primary" formControlName="rdWithdrawalDate">
+              <nb-datepicker #rdWithdrawalDate></nb-datepicker>
+            </div>
+    
+            <div class="col-md-4">
+                <label>Withdrawal type </label>
+                <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="withdrawalType">
+            </div>
+
+            <div class="col-md-4">
+                <label>Withdrawal Amount</label>
+                <input nbInput fullWidth fieldSize="small" placeholder=""shape="rectangle" status="primary" formControlName="withdrawalAmt">
+            </div>
+    
+        </div>
+
+        <div class="row">
+    
+            <div class="col-md-4">
+              <label>Withdrawal Cheque No.</label>
+              <input nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="withdrawalChqNum">
+            </div>
+    
+            <div class="col-md-4">
+                <label>Withdrawal Cheque Date </label>
+                <input nbInput fullWidth fieldSize="small" placeholder="Date" [nbDatepicker]="withdrawalChqDate" shape="rectangle" status="primary" formControlName="withdrawalChqDate">
+                <nb-datepicker #withdrawalChqDate></nb-datepicker>
+            </div>
+
+            <div class="col-md-4">
+                <label>Name Of Bank</label>
+                <input nbInput fullWidth fieldSize="small" placeholder="SBI"shape="rectangle" status="primary" formControlName="bankName">
+            </div>
+    
+        </div>
+
+        <div class="row">
+    
+            <div class="col-md-4" style="margin-top: 25px;">
+               <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+            </div>
+
+            <div class="col-md-4">
+                <button style="margin-top: 25px;" nbButton hero fullWidth status="success">Submit</button>
+             </div>
+
+             <div class="col-md-12" style="margin-top: 25px;">
+                <p>
+                    value: {{ rdCreditWithdrawal.value | json}}
+                </p>
+            </div>
+    
+        </div>
+
+    </nb-card-body>
+  </nb-card>
+</form>  

@@ -1,0 +1,120 @@
+
+<form [formGroup]="onlineRdRequest" (ngSubmit)= "onSubmit()">
+
+<nb-card accent="warning">
+    <nb-card-header>Online RD Request</nb-card-header>
+    <nb-card-body>
+  
+      <div class="row">
+        
+          <div class="col-md-6">
+              <label>Request Date</label>
+              <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="requestDate" formControlName="requestDate">
+              <nb-datepicker #requestDate></nb-datepicker>
+          </div>
+
+         <div class="col-md-6">
+           <label>Request ID</label>
+           <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="requestId">
+         </div>
+  
+         
+      </div>
+
+      <div class="row">
+  
+          <div class="col-md-6">
+            <label>Staff Number</label>
+            <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffNumber">  
+          </div>
+  
+          <div class="col-md-6">
+              <label>Member Number</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="memberNumber">  
+          </div>
+      </div>
+
+        <div class="row">
+  
+            <div class="col-md-4">
+              <label>Name</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="name">
+            </div>
+      
+            <div class="col-md-4">
+                <label>Mobile Number</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="mobileNumber">
+            </div>
+
+            <div class="col-md-4">
+                <label>Address</label>
+                <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="address"></textarea>
+            </div>
+        </div> 
+
+        <div class="row">
+  
+            <div class="col-md-4">
+              <label>Nominee</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="nominee">
+            </div>
+      
+            <div class="col-md-4">
+                <label>RD Amount</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="rdAmount">
+            </div>
+
+            <div class="col-md-4">
+                <label>Period</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="period">
+            </div>
+        </div>  
+
+        <div class="row">
+  
+            <div class="col-md-4">
+              <label>RD Interest</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="rdInterest">
+            </div>
+      
+            <div class="col-md-4">
+                <label>Maturity Amount</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="maturityAmt">
+            </div>
+
+            <div class="col-md-4">
+                <label>Terms & Condition</label>
+                <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="tAndC">
+            </div>
+        </div>  
+
+        <div class="row">
+  
+            <div class="col-md-4">
+              <label>Status</label>
+              <nb-select fullWidth size="small" status="primary" formControlName="status">
+                  <nb-option value="true" >Active</nb-option>
+                  <nb-option value="false" >Deactive</nb-option>
+              </nb-select>
+            </div>
+      
+            <div class="col-md-4" style="margin-top: 25px;">
+              <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+            </div>
+        </div> 
+        
+        <div class="row">
+
+            <div class="col-md-4">
+              <button style="margin-top: 25px;" nbButton hero fullWidth status="warning">Submit</button>
+            </div>
+
+            <div class="col-md-12" style="margin-top: 25px;">
+                <p>
+                    value: {{ onlineRdRequest.value | json}}
+                </p>
+            </div>
+        </div>  
+    </nb-card-body>
+  </nb-card>         
+</form>  

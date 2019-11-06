@@ -1,0 +1,78 @@
+
+<form [formGroup]="shareForm" (ngSubmit)="onSubmit()">
+
+<nb-card size="medium" accent="danger">
+    
+  <nb-card-header>Share Forms</nb-card-header>
+  
+    <nb-card-body>
+        <div class="row">
+           <div class="col-md-4">
+             <label>Member Name</label>
+             <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="memberName">
+           </div>
+              
+           <div class="col-md-4">
+             <label>Staff No.</label>
+             <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">
+           </div>    
+
+           <div class="col-md-4">
+             <label>Share Allocation No.</label>
+             <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="shareAllocationNumber">
+           </div>   
+      </div>  
+    
+      <div class="row">
+        <div class="col-md-4">
+          <label>Status</label>
+          <nb-select fullWidth status="primary" size="small" placeholder="Active"formControlName="status">
+            <nb-option value="Active">Active</nb-option>
+            <nb-option value="Adjusted in Thrift">Adjusted in Thrift</nb-option>
+            <nb-option value="Cancel">Cancel</nb-option>
+            <nb-option value="Paid">Paid</nb-option>
+          </nb-select>  
+        </div>
+            
+        <div class="col-md-4">
+          <label>Share Allocation From </label>
+          <nb-select fullWidth status="primary" size="small" placeholder="New Member"formControlName="shareAllocationForm">
+            <nb-option value="Adjustment">Adjustment</nb-option>
+            <nb-option value="Loan">Loan</nb-option>
+            <nb-option value="New Member">New Member</nb-option>
+            <nb-option value="Thrift">Thrift</nb-option>
+          </nb-select>  
+        </div>  
+
+        <div class="col-md-4">
+          <label>Date Of Allocation</label>
+          <input nbInput fullWidth fieldSize="small" [nbDatepicker]="allocationDate" shape="rectangle" status="primary" formControlName="allocationDate">
+          <nb-datepicker #allocationDate></nb-datepicker>
+        </div>   
+      </div> 
+      
+      <div class="row">
+          <div class="col-md-4">
+            <label>Amount Of Share Allocated (In Rs.)</label>
+            <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="shareAllocatedAmt">
+          </div>
+              
+          <div class="col-md-4">
+            <label>No. Of Share Allocated</label>
+            <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="shareAllocatedNo">
+          </div>
+
+          <div class="col-md-4">
+              <button style="margin-top: 25px;" nbButton hero fullWidth status="success">Submit</button>
+           </div>
+
+          <div class="col-md-12" style="margin-top: 25px;">
+            <p>
+                value: {{ shareForm.value | json}}
+            </p>
+        </div>
+      </div>   
+  </nb-card-body> 
+</nb-card>   
+</form>
+    

@@ -1,0 +1,115 @@
+
+<form [formGroup]="chequeTransaction" (ngSubmit)= "onSubmit">
+
+<nb-card size="medium" accent="success">
+    <nb-card-header>Generate Cheque List</nb-card-header>
+    <nb-card-body>
+  
+      <div class="row">
+          
+          <div class="col-md-4">
+              <label>Rec From / Pay To</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="recFromPayTo">             
+          </div>
+
+          <div class="col-md-4">
+              <label>Transaction From</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="transactionForm">      
+           </div>
+
+         <div class="col-md-4">
+           <label>Cheque Type</label>
+           <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="chequeType">
+         </div>
+      </div>
+
+      <div class="row">
+
+          <div class="col-md-6">
+              <label>Bank Name</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="bankName">
+          </div>
+          
+          <div class="col-md-6">
+              <label>Cheque No./ Bank Code</label>
+              <input nbInput type="text" fullWidth status="primary" placeholder="" shape="rectangle" fieldSize="small" formControlName="chequeNum">
+          </div>
+      </div>
+      
+      <div class="row">
+  
+          <div class="col-md-6">
+              <label>Receive Amt.(Rs.)</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="receiveAmt">
+          </div>
+
+          <div class="col-md-6">
+              <label>Pay Amt.(Rs.)</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="payAmt">
+          </div> 
+      </div>   
+     
+      <div class="row">
+  
+          <div class="col-md-4">
+              <nb-checkbox status="success" formControlName="chequeCleared">Cheque Cleared</nb-checkbox>
+          </div>
+      </div>
+      
+      <div class="row">
+  
+          <div class="col-md-6">
+              <label>Clearance Date</label>
+              <input nbInput fullWidth fieldSize="small" placeholder="clearanceDate" [nbDatepicker]="clearanceDate" shape="rectangle" status="primary" formControlName="clearanceDate">
+              <nb-datepicker #clearanceDate></nb-datepicker>
+          </div>
+
+          <div class="col-md-6">
+              <label>Status</label>
+              <nb-select fullWidth status="primary" size="small" placeholder="Active"formControlName="status">
+                  <nb-option value="true">Active</nb-option>
+                  <nb-option value="false">Canceled</nb-option>
+              </nb-select> 
+          </div> 
+    </div>   
+  </nb-card-body>  
+</nb-card>    
+
+<nb-card size="small" accent="danger">
+    <nb-card-header>Data Required</nb-card-header>
+    <nb-card-body>
+      <div class="row">
+  
+          <div class="col-md-4">
+            <label>Cheque Date</label>
+            <input nbInput fullWidth fieldSize="small" placeholder="" [nbDatepicker]="chequeDate" shape="rectangle" status="primary" formControlName="chequeDate">
+            <nb-datepicker #chequeDate></nb-datepicker>
+          </div>
+
+          <div class="col-md-4">
+            <button  nbButton fullWidth status="danger" style="margin-top: 25px;">Generate Button</button> 
+          </div>
+
+          <div class="col-md-4" style="margin-top: 25px;">
+              <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+          </div>
+      </div>
+
+      <div class="row">
+
+          <div class="col-md-4">
+              <button style="margin-top: 25px;" nbButton hero fullWidth status="success">Submit</button>
+           </div>
+
+           <div class="col-md-12" style="margin-top: 25px;">
+              <p>
+                  value: {{ chequeTransaction.value | json}}
+              </p>
+          </div>
+      </div>
+    </nb-card-body>  
+  </nb-card>  
+</form>          
+  
+        
+        

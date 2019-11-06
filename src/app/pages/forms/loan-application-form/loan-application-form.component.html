@@ -1,0 +1,85 @@
+
+<form [formGroup]="loanApplicationForm" (ngSubmit)="onSubmit()">
+
+<nb-card size="large" accent="warning">
+    <nb-card-header>Loan Application Form</nb-card-header>
+    <nb-card-body>
+  
+      <div class="row">
+  
+        <div class="col-md-6">
+          <label>Staff No.</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="staffNumber">
+        </div>
+  
+        <div class="col-md-6">
+          <label>Membership No.</label>
+          <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="membershipNumber">
+        </div>
+      </div>
+
+      <div class="row">
+  
+          <div class="col-md-6">
+            <label>Date Of Membership</label>
+            <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="membershipDate" formControlName="membershipDate">
+            <nb-datepicker #membershipDate></nb-datepicker>         
+          </div>
+    
+          <div class="col-md-6">
+            <label>Membership Status</label>
+            <nb-select fullWidth status="primary" size="small" placeholder="Open" formControlName="membershipStatus">
+                <nb-option value="Open">Open</nb-option>
+                <nb-option value="Closed">Closed</nb-option>
+                <nb-option value="Cancel">Cancel</nb-option>
+                <nb-option value="Completed">Completed</nb-option>
+                <nb-option value="Retiring">Retiring</nb-option>
+            </nb-select> 
+          </div>
+        </div>
+
+        <div class="row">
+  
+            <div class="col-md-6">
+              <label>Member Name</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="memberName">
+            </div>
+      
+            <div class="col-md-6">
+              <label>Gender</label>
+              <nb-select fullWidth status="primary" size="small" formControlName="gender">
+                  <nb-option value="Male">Male</nb-option>
+                  <nb-option value="Female">Female</nb-option>
+              </nb-select> 
+            </div>
+          </div> 
+
+        <div class="row">
+  
+            <div class="col-md-6">
+              <label>Date Of Birth</label>
+              <input nbInput fullWidth status="primary" shape="rectangle" fieldSize="small" [nbDatepicker]="dob" formControlName="dob">
+              <nb-datepicker #dob></nb-datepicker>
+            </div>
+        
+            <div class="col-md-6">
+              <label>Phone No.</label>
+              <input nbInput type="text" fullWidth status="primary" shape="rectangle" fieldSize="small" formControlName="phoneNumber">
+            </div>
+          </div> 
+
+          <div class="row">
+  
+              <div class="col-md-4">
+                  <button style="margin-top: 25px;" nbButton hero fullWidth status="warning">Submit</button>
+               </div>
+  
+              <div class="col-md-12" style="margin-top: 25px;">
+                  <p>
+                      value: {{ loanApplicationForm.value | json}}
+                  </p>
+              </div>
+            </div> 
+    </nb-card-body>
+  </nb-card>  
+</form>          

@@ -1,0 +1,166 @@
+
+<form [formGroup]="excessDetails" (ngSubmit)= "onSubmit()">
+
+<nb-card size="medium" accent="warning">
+    
+  <nb-card-header>Excess Details</nb-card-header>
+  
+      <nb-card-body>
+          <div class="row">
+              <div class="col-md-6">
+                  <label>Staff Number</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">   
+              </div>
+              
+              <div class="col-md-6">
+                  <label>Member name</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="memberName">
+              </div>      
+          </div>  
+
+          <div class="row">
+
+              <div class="col-md-6">
+                  <label>Excess ID</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="excessId">
+              </div>  
+
+              <div class="col-md-6">
+                  <label>Payment Status</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="paymentStatus">
+              </div>
+          </div>   
+
+              <div class="row">
+              <div class="col-md-6">
+                  <label>Date of Excess Amount</label>
+                  <input nbInput fullWidth fieldSize="small" placeholder="Excess Amount Date" [nbDatepicker]="excessAmtDate" shape="rectangle" status="primary" formControlName="excessAmtDate">
+                  <nb-datepicker #excessAmtDate></nb-datepicker>
+              </div>
+              
+              <div class="col-md-6">
+                  <label>Excess From</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="excessFrom">
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-6">
+                  <label>Excess amount</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="excessAmt">
+              </div>
+
+              <div class="col-md-6">
+                  <label>Amount in words</label>
+                  <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="amtInWords"></textarea>
+              </div>
+          </div>
+      </nb-card-body>    
+</nb-card>
+
+<nb-card size="medium" accent="danger">
+    
+    <nb-card-header>Payment Details</nb-card-header>
+    
+        <nb-card-body formGroupName="paymentDetails">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Payment Type</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="paymentType">   
+                </div>
+                
+                <div class="col-md-6">
+                    <label>Payment Date</label>
+                    <input nbInput fullWidth fieldSize="small" placeholder="Payment Date" [nbDatepicker]="paymentDate" shape="rectangle" status="primary" formControlName="paymentDate">
+                    <nb-datepicker #paymentDate></nb-datepicker>
+                </div>     
+            </div>  
+  
+            <div class="row">
+  
+                <div class="col-md-6">
+                    <label>Cheque Date</label>
+                    <input nbInput fullWidth fieldSize="small" placeholder="Cheque Date" [nbDatepicker]="chequeDate" shape="rectangle" status="primary" formControlName="chequeDate">
+                    <nb-datepicker #chequeDate></nb-datepicker>
+                </div>  
+  
+                <div class="col-md-6">
+                    <label>Cheque Number</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="chequeNumber">
+                </div>
+            </div>   
+  
+                <div class="row">
+                <div class="col-md-4">
+                    <label>Bank Name</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="bankName">
+                </div>
+                
+                <div class="col-md-4">
+                    <button style="margin-top: 25px;" nbButton hero outline fullWidth status="danger">Button to fill all details</button>
+                </div>
+
+                <div class="col-md-4" style="margin-top: 25px;">
+                  <nb-checkbox status="warning" formControlName="approved">Approved</nb-checkbox>
+               </div>
+            </div>
+  
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label>Comments</label>
+                    <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="comments"></textarea>
+                </div>
+
+                <div class="col-md-6" style="margin-top: 25px;">
+                    <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+                </div>       
+            </div>
+        </nb-card-body>    
+  </nb-card>
+
+  <nb-card size="medium" accent="info">
+    
+      <nb-card-header>Operations</nb-card-header>
+      
+          <nb-card-body formGroupName="operations">
+
+              <div class="row">
+
+                  <div class="col-md-6">
+                      <button style="margin-top: 25px;" nbButton hero outline fullWidth status="danger">Button to fill all details</button>
+                  </div>
+  
+                  <div class="col-md-6" style="margin-top: 25px;">
+                    <nb-checkbox status="warning" formControlName="approved">Approved</nb-checkbox>
+                 </div>
+              </div>
+    
+              <div class="row">
+  
+                  <div class="col-md-6">
+                      <label>Comments</label>
+                      <textarea nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="comments"></textarea>
+                  </div>
+  
+                  <div class="col-md-6" style="margin-top: 25px;">
+                      <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+                  </div>       
+              </div>
+
+              <div class="row">
+  
+                    <div class="col-md-4">
+                        
+                        <button style="margin-top: 25px;" nbButton hero fullWidth status="warning">Submit</button>
+                    </div>
+    
+                    <div class="col-md-12" style="margin-top: 25px;">
+                        <p>
+                            value: {{ excessDetails.value | json}}
+                        </p>
+                    </div>       
+                </div>
+          </nb-card-body>    
+    </nb-card>
+ </form>   

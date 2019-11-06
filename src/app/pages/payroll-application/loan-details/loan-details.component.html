@@ -1,0 +1,76 @@
+
+<form [formGroup]="loanDetails" (ngSubmit)= "onSubmit()">
+
+<nb-card size="medium" accent="danger">
+    
+    <nb-card-header>Loan Details</nb-card-header>
+    
+        <nb-card-body>
+            <div class="row">
+              
+                <div class="col-md-4">
+                    <label>Loan A/C Number </label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="loanAccountNum">
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Registration Number </label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="regNumber">
+                </div>  
+                
+                <div class="col-md-4">
+                  <label>Staff Number</label>
+                  <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="staffNumber">
+              </div> 
+            </div>  
+  
+            <div class="row">
+  
+                <div class="col-md-4">
+  
+                    <label>Member Name</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" status="primary" formControlName="memberName">
+                </div>  
+  
+                <div class="col-md-4">
+                    <label>Status</label>
+                    <nb-select fullWidth status="primary" placeholder="Active" size="small" formControlName="status">
+                      <nb-option value="Active">Active</nb-option>
+                      <nb-option value="Adjusted in Thrift">Adjusted in Thrift</nb-option>
+                      <nb-option value="Cancel">Cancel</nb-option>
+                      <nb-option value="Paid">Paid</nb-option>
+                    </nb-select> 
+                </div>
+
+                <div class="col-md-4">
+                    <label>Type of Loan</label>
+                    <nb-select fullWidth placeholder="Regular Loan" status="primary" size="small" formControlName="loanType">
+                        <nb-option value="Regular Loan">Regular Loan</nb-option>
+                        <nb-option value="Consumer Loan">Consumer Loan</nb-option>
+                        <nb-option value="Emergency Loan">Emergency Loan</nb-option>
+                    </nb-select> 
+                  </div>
+            </div>   
+  
+            <div class="row">
+  
+                <div class="col-md-4">
+                    <nb-checkbox status="success" formControlName="active">Active</nb-checkbox>
+                </div>
+            </div>
+
+            <div class="row">
+    
+                <div class="col-md-4">
+                    <button nbButton hero fullWidth status="danger">Submit</button>
+                </div>
+    
+                 <div class="col-md-12" style="margin-top: 25px;">
+                    <p>
+                        value: {{ loanDetails.value | json}}
+                    </p>
+                </div>
+            </div>
+        </nb-card-body>    
+  </nb-card>
+</form>  
